@@ -1,0 +1,33 @@
+body{
+    background-color: #FCFBFB;
+}
+
+#navBarMiddle{
+    justify-content: center;
+}
+
+.nav-link{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    color: #201F1D;
+}
+
+.nav-link .active{
+    color: #FFA633;
+}
+
+.nav-link:hover{
+    color: #FFA633;!important;
+}
+
+#signInNav{
+    color: white;
+    background-color: #201F1D;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+#signUpNav{
+    color: white;
+    background-color: #FFA633;
+    font-family: 'Fira Sans', sans-serif;
+}
