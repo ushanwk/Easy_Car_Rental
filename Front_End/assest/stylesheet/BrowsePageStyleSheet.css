@@ -2,6 +2,14 @@ body{
     background-color: #FCFBFB;
 }
 
+
+
+/*Header*/
+
+#navBar{
+    box-shadow: 0px 1px 10px #C2C3C2;
+}
+
 #navBarMiddle{
     justify-content: center;
 }
@@ -31,3 +39,17 @@ body{
     background-color: #FFA633;
     font-family: 'Fira Sans', sans-serif;
 }
+
+
+
+/*Section 1*/
+
+#section1{
+    height: 70vh;
+    width: 100vw;
+
+    background-image: url("/assest/images/browsepage/Section_1_Bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
