@@ -45,11 +45,13 @@ body{
 /*Section 1*/
 
 #section1{
-    height: 70vh;
+    height: 80vh;
     width: 100vw;
 
     background-image: url("/assest/images/browsepage/Section_1_Bg.png");
     background-size: cover;
     background-position: center;
 }
+
+#viewAllCarsBtn{}
 
