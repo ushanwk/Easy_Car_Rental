@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Easy Car Rental - Admin Dashboard</title>
+
+  <link rel="stylesheet" href="../assest/boostrap/css/bootstrap.css">
+  <script src="../assest/boostrap/js/bootstrap.bundle.js"></script>
+
+  <link rel="stylesheet" href="../assest/fontawesome/css/all.css">
+
+  <link rel="stylesheet" href="../assest/stylesheet/AdminDashboardStyleSheet.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700;900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <header class="header" id="header">
+
+    <div class="header_toggle"><i class="fa-solid fa-bars" id="header-toggle"></i></div>
+    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+
+  </header>
+
+  <div class="l-navbar" id="nav-bar">
+
+    <nav class="nav">
+
+      <div> <a href="#" class="nav_logo"> <i class='fa-brands fa-slack'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
+
+        <div class="nav_list">
+          <a href="#" class="nav_link active"> <i class='fa-solid fa-table-columns'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-user'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-id-card'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-car'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-book'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-money-bill'></i> <span class="nav_name"></span> </a>
+          <a href="#" class="nav_link"> <i class='fa-solid fa-chart-simple'></i> <span class="nav_name"></span> </a>
+        </div>
+
+      </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
+
+    </nav>
+
+  </div>
+
+  <!--Container Main start-->
+  <div class="height-100 bg-light">
+    <h4>Main Components</h4>
+  </div>
+
+
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+      const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+        const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId),
+                bodypd = document.getElementById(bodyId),
+                headerpd = document.getElementById(headerId)
+
+        // Validate that all variables exist
+        if(toggle && nav && bodypd && headerpd){
+          toggle.addEventListener('click', ()=>{
+            // show navbar
+            nav.classList.toggle('show')
+            // change icon
+            toggle.classList.toggle('bx-x')
+            // add padding to body
+            bodypd.classList.toggle('body-pd')
+            // add padding to header
+            headerpd.classList.toggle('body-pd')
+          })
+        }
+      }
+
+      showNavbar('header-toggle','nav-bar','body-pd','header')
+
+      /*===== LINK ACTIVE =====*/
+      const linkColor = document.querySelectorAll('.nav_link')
+
+      function colorLink(){
+        if(linkColor){
+          linkColor.forEach(l=> l.classList.remove('active'))
+          this.classList.add('active')
+        }
+      }
+      linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+      // Your code to run since DOM is loaded and ready
+    });
+
+  </script>
+
+</body>
+
+</html>
