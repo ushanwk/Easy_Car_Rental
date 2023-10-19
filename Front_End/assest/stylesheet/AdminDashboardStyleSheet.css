@@ -170,3 +170,15 @@ a {
         padding-left: calc(var(--nav-width) + 188px)
     }
 }
+
+
+/*Dashboard Content*/
+
+#dashboardBox1:hover, #dashboardBox2:hover,#dashboardBox3:hover{
+    box-shadow: 0px 1px 10px #FDDBAF!important;
+}
+
+
+
+
+
