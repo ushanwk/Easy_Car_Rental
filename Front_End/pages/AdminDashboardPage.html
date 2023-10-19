@@ -17,6 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700;900&display=swap" rel="stylesheet">
 
+  <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+
 </head>
 
 
@@ -33,11 +35,11 @@
 
     <nav class="nav">
 
-      <div> <a href="#" class="nav_logo"><i style="color: black" class="fa-brands fa-edge-legacy"></i><span class="nav_logo-name"></span> </a>
+      <div> <a href="#" class="nav_logo"><i style="color: black" class="fa-solid fa-bars"></i>/i><span class="nav_logo-name"></span> </a>
 
         <div class="nav_list">
-          <a href="#" class="nav_link active"> <i class='fa-solid fa-table-columns'></i> <span class="nav_name"></span> </a>
-          <a href="#" class="nav_link"> <i class='fa-solid fa-user'></i> <span class="nav_name"></span> </a>
+          <a href="#" id="btnDashboard" class="nav_link active"><i class='fa-solid fa-table-columns'></i> <span class="nav_name"></span> </a>
+          <a href="#" id="btnCustomer" class="nav_link"> <i class='fa-solid fa-user'></i> <span class="nav_name"></span> </a>
           <a href="#" class="nav_link"> <i class='fa-solid fa-id-card'></i> <span class="nav_name"></span> </a>
           <a href="#" class="nav_link"> <i class='fa-solid fa-car'></i> <span class="nav_name"></span> </a>
           <a href="#" class="nav_link"> <i class='fa-solid fa-book'></i> <span class="nav_name"></span> </a>
@@ -51,10 +53,55 @@
 
   </div>
 
-  <!--Container Main start-->
-  <section class="container-fluid pt-5">
-    <h4 style="font-family: 'Fira Sans', sans-serif; font-weight: 700; font-size: 40px">Dashboard</h4>
+
+
+
+
+  <!--Dashboard-->
+  <section class="container-fluid pt-5 ms-3" id="dashboardPanel">
+
+    <h4 class="pt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 40px">Dashboard</h4>
+
+    <div class="container-fluid ms-0 mt-5" style=" width:88vw">
+
+      <div class="container text-center">
+        <div class="row" style="height: 30vh">
+
+          <div class="col bg-white me-lg-3" style="box-shadow: 0px 1px 10px #C2C3C2; border-radius: 10px">
+
+            <h4 class="pt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 25px; color: #FFA633">Vehicals Owned</h4>
+
+          </div>
+
+          <div class="col bg-white me-lg-3" style="box-shadow: 0px 1px 10px #C2C3C2;border-radius: 10px">
+
+            <h4 class="pt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 25px; color: #FFA633">Total Rents</h4>
+
+          </div>
+
+          <div class="col bg-white" style="box-shadow: 0px 1px 10px #C2C3C2;border-radius: 10px">
+
+            <h4 class="pt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 25px; color: #FFA633">Total Drivers</h4>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
   </section>
+
+
+
+  <!--Customer-->
+  <section class="container-fluid pt-5" id="customerPanel">
+
+    <h4 style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 40px">Customer</h4>
+
+  </section>
+
+
 
 
 
@@ -99,6 +146,23 @@
 
       // Your code to run since DOM is loaded and ready
     });
+
+
+
+    $('#dashboardPanel').show();
+    $('#customerPanel').hide();
+
+    $('#btnDashboard').click(function () {
+      $('#dashboardPanel').show();
+      $('#customerPanel').hide();
+    });
+
+    $('#btnCustomer').click(function () {
+      $('#customerPanel').show();
+      $('#dashboardPanel').hide();
+    });
+
+
 
   </script>
 
