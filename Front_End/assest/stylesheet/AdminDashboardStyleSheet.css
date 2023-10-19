@@ -21,7 +21,6 @@ body {
     padding: 0 1rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
-    transition: .5s
 }
 
 a {
@@ -38,15 +37,9 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    background-color: var(--white-color);
+    background-color: white;
     z-index: var(--z-fixed);
-    transition: .5s
-}
-
-.header_toggle {
-    color: var(--first-color);
-    font-size: 1.5rem;
-    cursor: pointer
+    box-shadow: 0px 1px 10px #C2C3C2;
 }
 
 .header_img {
@@ -59,7 +52,7 @@ a {
 }
 
 .header_img img {
-    width: 40px
+    width: 40px;
 }
 
 .l-navbar {
@@ -70,7 +63,6 @@ a {
     height: 100vh;
     background-color: var(--first-color);
     padding: .5rem 1rem 0 0;
-    transition: .5s;
     z-index: var(--z-fixed)
 }
 
@@ -99,11 +91,6 @@ a {
     color: var(--white-color)
 }
 
-.nav_logo-name {
-    color: var(--white-color);
-    font-weight: 700
-}
-
 .nav_link {
     position: relative;
     color: var(--first-color-light);
@@ -112,7 +99,7 @@ a {
 }
 
 .nav_link:hover {
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 .nav_icon {
@@ -128,7 +115,7 @@ a {
 }
 
 .active {
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 .active::before {
