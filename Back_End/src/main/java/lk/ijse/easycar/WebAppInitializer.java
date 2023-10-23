@@ -1,4 +1,22 @@
 package lk.ijse.easycar;
 
-public class WebAppInitializer {
+import lk.ijse.easycar.config.WebAppConfig;
+import lk.ijse.easycar.config.WebRootConfig;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[]{WebRootConfig.class};
+    }
+
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[]{WebAppConfig.class};
+    }
+
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
 }
