@@ -310,7 +310,7 @@
 
               <div class="row mt-4 ms-2 me-2">
                 <div class="col">
-                  <label for="inputDriverId" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Driver Id</label>
+                  <label for="inputDriverId" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Driver ID</label>
                   <input type="driverDriverId" class="form-control" id="inputDriverId">
                 </div>
 
@@ -337,8 +337,8 @@
                   <input type="driverDriverNicLic" class="form-control" id="inputDriverNicLic">
                 </div>
                 <div class="col">
-                  <label for="formFile" class="form-label">Image of Nic/Licence</label>
-                  <input class="form-control" type="file" id="formFile">
+                  <label for="driverNic" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Image of Nic/Licence</label>
+                  <input class="form-control" type="file" id="driverNic">
                 </div>
 
               </div>
@@ -458,7 +458,19 @@
   <!--Car-->
   <section class="container-fluid pt-5 ms-3" id="carPanel">
 
-    <h4 class="pt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 40px">Car Management</h4>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <h4 class="pt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 40px">Car Management</h4>
+        </div>
+        <div class="col-sm">
+          <div class="col d-flex justify-content-end me-4 mt-3">
+            <button type="button" class="btn btn-dark mt-3" style="width: 8vw">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <div class="container-fluid ms-0 mt-5" style="width:88vw">
@@ -471,7 +483,7 @@
 
             <img src="../assest/images/admindashboard/Car.png" style="width: 100%">
 
-            <h1 class="ms-3 mt2" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Car Details</h1>
+            <h1 class="ms-3 mt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Car Details</h1>
 
 
             <div class="container">
@@ -550,19 +562,71 @@
 
 
 
-          <div class="col-sm me-lg-3" style="border: 1px solid #0dcaf0; border-radius: 10px">
+          <div class="col-sm me-lg-3">
 
-            <h1 class="ms-3 mt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Car Details</h1>
+            <h1 class="ms-2 mt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Information</h1>
 
-            <div class="container">
+            <div class="container mt-4 ms-1">
               <div class="row">
 
                 <div class="col-sm">
-                  One of three columns
+                  <label for="inputCarId" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Car ID</label>
+                  <input type="CarCarId" class="form-control" id="inputCarId">
                 </div>
-                
+
                 <div class="col-sm">
-                  One of three columns
+                  <label for="inputRegNo" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Reg No</label>
+                  <input type="CarRegNo" class="form-control" id="inputRegNo">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarBrand" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Brand</label>
+                  <input type="CarBrand" class="form-control" id="inputCarBrand">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarColor" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Color</label>
+                  <input type="CarColor" class="form-control" id="inputCarColor">
+                </div>
+
+              </div>
+            </div>
+
+            <h1 class="ms-2 mt-5" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Price For Rent</h1>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarRentDaily" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Daily</label>
+                  <input type="CarRentDaily" class="form-control" id="inputCarRentDaily">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarRentMonthly" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Monthly</label>
+                  <input type="CarRentMonthly" class="form-control" id="inputCarRentMonthly">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarRentMilage" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Milage for Price</label>
+                  <input type="CarRentMilage" class="form-control" id="inputCarRentMilage">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarRentPriceExtraKm" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Price for Extra KM</label>
+                  <input type="CarRnetPriceExtraKm" class="form-control" id="inputCarRentPriceExtraKm">
                 </div>
 
               </div>
@@ -572,9 +636,71 @@
 
 
 
-          <div class="col-sm" style="border: 1px solid #0dcaf0; border-radius: 10px">
+          <div class="col-sm">
+
+            <h1 class="ms-2 mt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Other Information</h1>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarMilage" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Milage</label>
+                  <input type="CarMilage" class="form-control" id="inputCarMilage">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarWavier" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Wavier Payment</label>
+                  <input type="CarWavier" class="form-control" id="inputCarWavier">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarMilageMaintain" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Last Maintain Milage</label>
+                  <input type="CarMilageMaintain" class="form-control" id="inputCarMilageMaintain">
+                </div>
+
+              </div>
+            </div>
+
+            <h1 class="ms-2 mt-5" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Images</h1>
+
+            <div class="container mt-4 ms-1">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarFrontView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Front View</label>
+                  <input class="form-control" type="file" id="inputCarFrontView">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarBackView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Back View</label>
+                  <input class="form-control" type="file" id="inputCarBackView">
+                </div>
+
+              </div>
+            </div>
 
 
+            <div class="container mt-3 ms-2">
+              <div class="row">
+
+                <div class="col-sm">
+                  <label for="inputCarSidetView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Side View</label>
+                  <input class="form-control" type="file" id="inputCarSidetView">
+                </div>
+
+                <div class="col-sm">
+                  <label for="inputCarInteriorView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Interior View</label>
+                  <input class="form-control" type="file" id="inputCarInteriorView">
+                </div>
+
+              </div>
+            </div>
 
           </div>
 
