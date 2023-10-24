@@ -33,3 +33,7 @@ body{
     border-color: #FFA633;
     box-shadow: inset 1px 1px #FFA633, 0 0 4px #FFA633;
 }
+
+#signInBtn:hover{
+    color: #FFA633!important;
+}
