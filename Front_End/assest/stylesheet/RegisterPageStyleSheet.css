@@ -15,8 +15,8 @@ body{
 }
 
 #box{
-    width: 450px;
-    height: 500px;
+    width: 70vw;
+    height: 70vh;
     background-color: white;
     box-shadow: 0px 1px 10px #C2C3C2;
 
