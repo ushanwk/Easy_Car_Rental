@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="../assest/stylesheet/RegisterPageStyleSheet.css">
 
+    <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+
 
 </head>
 
@@ -71,23 +73,124 @@
 
                         <h1 class="ms-4" style="color: #FFA633 ;font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Sign Up to Access the Portal</h1>
 
-                        <div class="ms-4 mt-3" style="border: 1px solid red; width: 90%; height: 48vh">
+
+
+                        <div class="ms-4 mt-5" style="width: 90%; height: 48vh" id="step1">
 
                             <h1 class="mt-4" style="color: black; font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Step 1 : Personal Details</h1>
 
-                            <div class="mt-4">
+                            <div class="mt-5">
                                 <label for="inputName" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Name</label>
                                 <input type="name" class="form-control" id="inputName">
                             </div>
 
-                            <div class="mt-3">
-                                <label for="inputName" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Name</label>
-                                <input type="name" class="form-control" id="inputName">
+                            <div class="mt-4">
+                                <div class="row">
+
+                                    <div class="col-sm">
+                                        <label for="inputAddress" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Address</label>
+                                        <input type="address" class="form-control" id="inputAddress">
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <label for="inputEmail" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail">
+                                    </div>
+
+                                </div>
                             </div>
+
+                            <div class="col d-flex justify-content-end mt-5">
+                                <button id="btnNext1" type="button" class="btn btn-dark mt-3" style="width: 8vw">Next</button>
+                            </div>
+
 
                         </div>
 
+
+
+
+
+                        <div class="ms-4 mt-5" style="width: 90%; height: 48vh" id="step2">
+
+                            <h1 class="mt-4" style="color: black; font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Step 2 : KYC Details</h1>
+
+                            <div class="mt-5">
+                                <label for="inputNic" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Nic or License Number</label>
+                                <input type="nic" class="form-control" id="inputNic">
+                            </div>
+
+                            <div class="mt-4">
+                                <div class="row">
+
+                                    <div class="col-sm">
+
+                                        <label for="inputNicFront" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Front View of NIC/License</label>
+                                        <input class="form-control" type="file" id="inputNicFront">
+
+                                    </div>
+
+                                    <div class="col-sm">
+
+                                        <label for="inputNicBack" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Back View of NIC/License</label>
+                                        <input class="form-control" type="file" id="inputNicBack">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col d-flex justify-content-end mt-5">
+                                <button id="btnNext2" type="button" class="btn btn-dark mt-3" style="width: 8vw">Next</button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="ms-4 mt-5" style="width: 90%; height: 48vh" id="step3">
+
+                            <h1 class="mt-4" style="color: black; font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">Step 3 : Login Details</h1>
+
+                            <div class="mt-5">
+                                <label for="inputUsername" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Username</label>
+                                <input type="username" class="form-control" id="inputUsername">
+                            </div>
+
+
+                            <div class="mt-4">
+                                <div class="row">
+
+                                    <div class="col-sm">
+                                        <label for="inputPassword" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword">
+                                    </div>
+
+                                    <div class="col-sm">
+                                        <label for="inputConfirmPassword" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Confirm Password</label>
+                                        <input type="password" class="form-control" id="inputConfirmPassword">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="col d-flex justify-content-end mt-5">
+                                <button type="button" class="btn btn-dark mt-3" style="width: 8vw">Register</button>
+                            </div>
+
+
+                        </div>
+
+
                     </div>
+
+
+
+
+
+                    </div>
+
+
 
                 </div>
 
@@ -97,6 +200,31 @@
 
 
     </section>
+
+
+
+
+
+
+    <script>
+
+        $('#step1').show();
+        $('#step2').hide();
+        $('#step3').hide();
+
+        $('#btnNext1').click(function (){
+            $('#step1').hide();
+            $('#step2').show();
+            $('#step3').hide();
+        });
+
+        $('#btnNext2').click(function (){
+            $('#step1').hide();
+            $('#step2').hide();
+            $('#step3').show();
+        });
+
+    </script>
 
 </body>
 
