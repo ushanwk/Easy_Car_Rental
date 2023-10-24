@@ -1,0 +1,35 @@
+body{
+    background-color: #FCFBFB;
+}
+
+
+#navBar{
+    box-shadow: 0px 1px 10px #C2C3C2;
+}
+
+
+#background{
+    width: 100vw;
+
+    position: relative;
+}
+
+#box{
+    width: 450px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0px 1px 10px #C2C3C2;
+
+    position: absolute;
+
+    top: 10vh;
+    right: 0;
+    left: 0;
+
+    margin: auto;
+}
+
+.form-control:focus {
+    border-color: #FFA633;
+    box-shadow: inset 1px 1px #FFA633, 0 0 4px #FFA633;
+}
