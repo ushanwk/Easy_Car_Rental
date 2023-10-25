@@ -16,25 +16,25 @@ import javax.persistence.Id;
 public class Car {
 
     @Id
-    String carID;
-    String regNo;
-    String brand;
-    String type;
-    String passenger;
-    String color;
-    String transmissionType;
-    String fuelType;
-    String extraMileagePrice;
-    String currentMileage;
-    String wavierPayment;
-    String availability;
-    String freeMileageDaily;
-    String freeMileageDailyPrice;
-    String freeMileageMonthly;
-    String freeMileageMonthlyPrice;
-    String frontImage;
-    String RearImage;
-    String sideImage;
-    String interiorImage;
+    private String carID;
+    private String regNo;
+    private String brand;
+    private String type;
+    private String passenger;
+    private String color;
+    private String transmissionType;
+    private String fuelType;
+    private String extraMileagePrice;
+    private String currentMileage;
+    private String wavierPayment;
+    private String availability;
+    private String freeMileageDaily;
+    private String freeMileageDailyPrice;
+    private String freeMileageMonthly;
+    private String freeMileageMonthlyPrice;
+    private String frontImage;
+    private String RearImage;
+    private String sideImage;
+    private String interiorImage;
 
 }
