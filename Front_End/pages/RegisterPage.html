@@ -17,9 +17,6 @@
 
     <link rel="stylesheet" href="../assest/stylesheet/RegisterPageStyleSheet.css">
 
-    <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
-
-
 </head>
 
 
@@ -125,14 +122,14 @@
 
                                     <div class="col-sm">
 
-                                        <label for="inputNicFront" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Front View of NIC/License</label>
+                                        <label for="inputNicFront" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Front View</label>
                                         <input class="form-control" type="file" id="inputNicFront">
 
                                     </div>
 
                                     <div class="col-sm">
 
-                                        <label for="inputNicBack" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Back View of NIC/License</label>
+                                        <label for="inputNicBack" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Back View</label>
                                         <input class="form-control" type="file" id="inputNicBack">
 
                                     </div>
@@ -175,7 +172,7 @@
 
 
                             <div class="col d-flex justify-content-end mt-5">
-                                <button type="button" class="btn btn-dark mt-3" style="width: 8vw">Register</button>
+                                <button id="btnReg" type="button" class="btn btn-dark mt-3" style="width: 8vw">Register</button>
                             </div>
 
 
@@ -185,46 +182,19 @@
                     </div>
 
 
-
-
-
-                    </div>
-
-
-
                 </div>
 
             </div>
 
         </div>
 
-
     </section>
 
 
 
 
-
-
-    <script>
-
-        $('#step1').show();
-        $('#step2').hide();
-        $('#step3').hide();
-
-        $('#btnNext1').click(function (){
-            $('#step1').hide();
-            $('#step2').show();
-            $('#step3').hide();
-        });
-
-        $('#btnNext2').click(function (){
-            $('#step1').hide();
-            $('#step2').hide();
-            $('#step3').show();
-        });
-
-    </script>
+    <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="../assest/js/RegisterPgeJS.js"></script>
 
 </body>
 
