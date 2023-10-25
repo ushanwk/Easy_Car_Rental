@@ -20,7 +20,6 @@ public class Customer {
     private String name;
     private String address;
     private String email;
-    private String contactNo;
     private String licenseNo;
     private String frontImage;
     private String backImage;

@@ -19,5 +19,6 @@ public class CustomerDTO {
     private String licenseNo;
     private String frontImage;
     private String backImage;
+    private String username;
 
 }

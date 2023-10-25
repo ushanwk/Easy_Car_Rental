@@ -25,16 +25,21 @@ function addCustomer(){
     let name = $('#inputName').val();
     let address = $('#inputAddress').val();
     let email = $('#inputEmail').val();
+    let nic = $('#inputNic').val();
+    let nicFornt = $('#inputNicFront').val();
+    let nicBack = $('#inputNicBack').val();
+    let username = $('#inputUsername').val();
+
 
     let customer = {
-        customerID:"id",
-        name:"name",
-        address:"address",
-        email:"email",
-        contactNo:"no",
-        licenseNo:"li",
-        frontImage:$('#inputNicFront').val(),
-        backImage:"bi"
+        customerID:"C001",
+        name:name,
+        address:address,
+        email:email,
+        licenseNo:nic,
+        frontImage:nicFornt,
+        backImage:nicBack,
+        username:username
     }
 
     $.ajax({
