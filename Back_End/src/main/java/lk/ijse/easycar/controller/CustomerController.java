@@ -19,7 +19,8 @@ public class CustomerController {
 
     @PostMapping
     public ResponseUtil addCustomer(CustomerDTO customerDTO){
-        customerService.addCustomer(customerDTO);
+        System.out.println(customerDTO);
+//        customerService.addCustomer(customerDTO);
         return new ResponseUtil("Ok", "Customer Successfully Added", customerDTO);
     }
 
