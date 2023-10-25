@@ -14,6 +14,9 @@ $('#btnNext2').click(function (){
     $('#step3').show();
 });
 
+$('#btnReg').click(function () {
+    addCustomer();
+});
 
 let mainLink = "http://localhost:8080/Back_End_war/";
 
@@ -24,9 +27,14 @@ function addCustomer(){
     let email = $('#inputEmail').val();
 
     let customer = {
-        name:name,
-        address:address,
-        email:email
+        customerID:"id",
+        name:"name",
+        address:"address",
+        email:"email",
+        contactNo:"no",
+        licenseNo:"li",
+        frontImage:$('#inputNicFront').val(),
+        backImage:"bi"
     }
 
     $.ajax({
@@ -43,7 +51,3 @@ function addCustomer(){
     });
 
 }
-
-$('#btnReg').click(function () {
-    addCustomer();
-});

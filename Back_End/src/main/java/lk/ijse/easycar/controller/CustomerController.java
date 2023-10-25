@@ -4,10 +4,7 @@ import lk.ijse.easycar.dto.CustomerDTO;
 import lk.ijse.easycar.service.CustomerService;
 import lk.ijse.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
@@ -18,8 +15,8 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping
-    public ResponseUtil addCustomer(CustomerDTO customerDTO){
-        System.out.println(customerDTO);
+    public ResponseUtil addCustomer(@RequestBody CustomerDTO customerDTO){
+        System.out.println(customerDTO.getFrontImage());
 //        customerService.addCustomer(customerDTO);
         return new ResponseUtil("Ok", "Customer Successfully Added", customerDTO);
     }
