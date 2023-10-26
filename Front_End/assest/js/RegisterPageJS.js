@@ -37,7 +37,7 @@ function addCustomer(){
         name:name,
         address:address,
         email:email,
-        nicNum:nic,
+        nicNo:nic,
         frontImage:nicFornt,
         backImage:nicBack,
         username:username,
@@ -47,6 +47,8 @@ function addCustomer(){
             role:"CUSTOMER"
         }
     }
+
+    console.log(customer);
 
     $.ajax({
         url : mainLink + 'customer',

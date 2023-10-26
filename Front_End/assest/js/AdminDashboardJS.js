@@ -130,9 +130,9 @@ function loadAllCustomers(){
                 let name = customers[i].name;
                 let address = customers[i].address;
                 let email = customers[i].email;
-                let nic = customers[i].nic;
+                let nic = customers[i].nicNo;
 
-                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td></tr>`;
+                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic}</td></tr>`;
                 $('#tblCustomer').append(row);
             }
         }
