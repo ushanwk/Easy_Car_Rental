@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700;900&display=swap" rel="stylesheet">
 
-  <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+
 
 </head>
 
@@ -333,12 +333,12 @@
                   <input style="width: 12vw" type="driverDriverEmail" class="form-control" id="inputDriverEmail">
                 </div>
                 <div class="col">
-                  <label for="inputDriverNicLic" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Nic/License Card</label>
-                  <input type="driverDriverNicLic" class="form-control" id="inputDriverNicLic">
+                  <label for="inputDriverNicLicNo" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Nic/License Card</label>
+                  <input type="driverDriverNicLic" class="form-control" id="inputDriverNicLicNo">
                 </div>
                 <div class="col">
-                  <label for="driverNic" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Image of Nic/Licence</label>
-                  <input class="form-control" type="file" id="driverNic">
+                  <label for="driverNicImg" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Image of Nic/Licence</label>
+                  <input class="form-control" type="file" id="driverNicImg">
                 </div>
 
               </div>
@@ -357,8 +357,8 @@
                 </div>
 
                 <div class="col">
-                  <label for="inputPassword" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Password</label>
-                  <input type="password" class="form-control" id="inputPassword">
+                  <label for="inputDriverPassword" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Password</label>
+                  <input type="password" class="form-control" id="inputDriverPassword">
                 </div>
 
               </div>
@@ -376,7 +376,7 @@
                 </div>
 
                 <div class="col d-flex justify-content-end me-4 mt-3">
-                    <button type="button" class="btn btn-dark mt-3" style="width: 8vw">Register</button>
+                    <button id="btnDriverReg" type="button" class="btn btn-dark mt-3" style="width: 8vw">Register</button>
                 </div>
 
               </div>
@@ -716,82 +716,10 @@
 
 
 
-  <script>
 
-    document.addEventListener("DOMContentLoaded", function(event) {
+  <script src="../assest/jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+  <script src="../assest/js/AdminDashboardJS.js"></script>
 
-      const showNavbar = (toggleId, navId, bodyId, headerId) =>{
-        const toggle = document.getElementById(toggleId),
-                nav = document.getElementById(navId),
-                bodypd = document.getElementById(bodyId),
-                headerpd = document.getElementById(headerId)
-
-        // Validate that all variables exist
-        if(toggle && nav && bodypd && headerpd){
-          toggle.addEventListener('click', ()=>{
-            // show navbar
-            nav.classList.toggle('show')
-            // change icon
-            toggle.classList.toggle('bx-x')
-            // add padding to body
-            bodypd.classList.toggle('body-pd')
-            // add padding to header
-            headerpd.classList.toggle('body-pd')
-          })
-        }
-      }
-
-      showNavbar('header-toggle','nav-bar','body-pd','header')
-
-      /*===== LINK ACTIVE =====*/
-      const linkColor = document.querySelectorAll('.nav_link')
-
-      function colorLink(){
-        if(linkColor){
-          linkColor.forEach(l=> l.classList.remove('active'))
-          this.classList.add('active')
-        }
-      }
-      linkColor.forEach(l=> l.addEventListener('click', colorLink))
-
-    });
-
-    $('#dashboardPanel').show();
-    $('#customerPanel').hide();
-    $('#driverPanel').hide();
-    $('#carPanel').hide();
-
-    $('#btnDashboard').click(function () {
-      $('#dashboardPanel').show();
-      $('#customerPanel').hide();
-      $('#driverPanel').hide();
-      $('#carPanel').hide();
-    });
-
-    $('#btnCustomer').click(function () {
-      $('#customerPanel').show();
-      $('#dashboardPanel').hide();
-      $('#driverPanel').hide();
-      $('#carPanel').hide();
-    });
-
-    $('#btnDriver').click(function () {
-      $('#driverPanel').show();
-      $('#customerPanel').hide();
-      $('#dashboardPanel').hide();
-      $('#carPanel').hide();
-    });
-
-    $('#btnCar').click(function () {
-      $('#carPanel').show();
-      $('#driverPanel').hide();
-      $('#customerPanel').hide();
-      $('#dashboardPanel').hide();
-    });
-
-
-
-  </script>
 
 </body>
 

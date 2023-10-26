@@ -19,9 +19,7 @@ public class Driver {
     private String drivingLicenceNo;
     private String driverName;
     private String email;
-    private String contactNo;
-    private String frontImage;
-    private String backImage;
+    private String licenseImage;
 
     @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "userName",referencedColumnName = "userName",nullable = false)

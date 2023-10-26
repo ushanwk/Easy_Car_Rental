@@ -1,5 +1,6 @@
 package lk.ijse.easycar.dto;
 
+import lk.ijse.easycar.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +16,7 @@ public class DriverDTO {
     private String drivingLicenceNo;
     private String driverName;
     private String email;
-    private String contactNo;
-    private String frontImage;
-    private String backImage;
+    private String LicenseImage;
+    private User user;
 
 }
