@@ -61,6 +61,7 @@ $('#btnDriver').click(function () {
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
     $('#carPanel').hide();
+    loadAllDrivers();
 });
 
 $('#btnCar').click(function () {
@@ -68,6 +69,12 @@ $('#btnCar').click(function () {
     $('#driverPanel').hide();
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
+});
+
+
+
+$('#btnDriverReg').click(function () {
+    addDriver();
 });
 
 
@@ -120,7 +127,6 @@ function loadAllCustomers(){
     $.ajax({
         url : mainLink + "customer",
         success : function(res){
-            console.log(res.data)
 
             let customers = $(res.data);
             $('#tblCustomer').empty();
@@ -132,7 +138,8 @@ function loadAllCustomers(){
                 let email = customers[i].email;
                 let nic = customers[i].nicNo;
 
-                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic}</td></tr>`;
+                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic
+                }</td></tr>`;
                 $('#tblCustomer').append(row);
             }
         }
@@ -140,9 +147,30 @@ function loadAllCustomers(){
 }
 
 
-$('#btnDriverReg').click(function () {
-    addDriver();
-});
+function loadAllDrivers(){
+    $.ajax({
+        url : mainLink + "driver",
+        success : function(res){
+
+            let drivers = $(res.data);
+            $('#tblDriver').empty();
+
+            for(let i = 0; i < drivers.length; i++){
+                let driverId = drivers[i].driverID;
+                let license = drivers[i].drivingLicenceNo;
+                let email = drivers[i].email;
+
+                let row =`<tr><td>${driverId}</td><td>${license}</td><td>${email}</td></tr>`;
+                $('#tblDriver').append(row);
+            }
+        }
+    });
+}
+
+
+
+
+
 
 
 

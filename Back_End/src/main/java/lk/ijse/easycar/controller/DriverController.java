@@ -26,4 +26,10 @@ public class DriverController {
         return new ResponseUtil("Ok", "Driver Successfully Added", driverDTO);
     }
 
+    @GetMapping
+    public ResponseUtil getAllDriver(){
+        return new ResponseUtil("Ok", "All Drivers", driverService.loadAllDriver());
+    }
+
+
 }
