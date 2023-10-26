@@ -37,7 +37,7 @@ function addCustomer(){
         name:name,
         address:address,
         email:email,
-        licenseNo:nic,
+        nicNum:nic,
         frontImage:nicFornt,
         backImage:nicBack,
         username:username,

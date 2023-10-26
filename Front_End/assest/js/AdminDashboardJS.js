@@ -53,6 +53,7 @@ $('#btnCustomer').click(function () {
     $('#dashboardPanel').hide();
     $('#driverPanel').hide();
     $('#carPanel').hide();
+    loadAllCustomers();
 });
 
 $('#btnDriver').click(function () {
@@ -112,6 +113,30 @@ function addDriver(){
         }
     });
 
+}
+
+
+function loadAllCustomers(){
+    $.ajax({
+        url : mainLink + "customer",
+        success : function(res){
+            console.log(res.data)
+
+            let customers = $(res.data);
+            $('#tblCustomer').empty();
+
+            for(let i = 0; i < customers.length; i++){
+                let id = customers[i].customerID;
+                let name = customers[i].name;
+                let address = customers[i].address;
+                let email = customers[i].email;
+                let nic = customers[i].nic;
+
+                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td></tr>`;
+                $('#tblCustomer').append(row);
+            }
+        }
+    });
 }
 
 
