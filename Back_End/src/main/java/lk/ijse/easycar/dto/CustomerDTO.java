@@ -1,5 +1,6 @@
 package lk.ijse.easycar.dto;
 
+import lk.ijse.easycar.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,6 @@ public class CustomerDTO {
     private String frontImage;
     private String backImage;
     private String username;
+    private User user;
 
 }

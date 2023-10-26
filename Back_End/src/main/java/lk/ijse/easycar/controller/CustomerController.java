@@ -15,13 +15,12 @@ public class CustomerController {
 
     @Autowired
     CustomerService customerService;
-
     @Autowired
     UserService userService;
 
     @PostMapping
     public ResponseUtil addCustomer(@RequestBody CustomerDTO customerDTO){
-        userService.addUser(new UserDTO(customerDTO.getUsername(), "123", "Customer"));
+        userService.addUser(new UserDTO(customerDTO.getUsername(), customerDTO.getUser().getPassword(), customerDTO.getUser().getRole()));
         customerService.addCustomer(customerDTO);
         return new ResponseUtil("Ok", "Customer Successfully Added", customerDTO);
     }

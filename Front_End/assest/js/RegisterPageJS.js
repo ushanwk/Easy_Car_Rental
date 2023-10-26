@@ -29,6 +29,7 @@ function addCustomer(){
     let nicFornt = $('#inputNicFront').val();
     let nicBack = $('#inputNicBack').val();
     let username = $('#inputUsername').val();
+    let password = $('#inputPassword').val();
 
 
     let customer = {
@@ -39,7 +40,12 @@ function addCustomer(){
         licenseNo:nic,
         frontImage:nicFornt,
         backImage:nicBack,
-        username:username
+        username:username,
+        user:{
+            username:username,
+            password:password,
+            role:"CUSTOMER"
+        }
     }
 
     $.ajax({
