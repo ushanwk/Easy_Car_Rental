@@ -82,6 +82,7 @@ $('#btnCarAll').click(function () {
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
     $('#allCarPanel').show();
+    loadAllCars();
 });
 
 
@@ -162,10 +163,11 @@ function addDriver(){
         data : JSON.stringify(driver),
         contentType : 'application/json',
         success:function(){
-            console.log("Success")
+            console.log("Success");
+            loadAllDrivers();
         },
         error : function(){
-            console.log("Error")
+            console.log("Error");
         }
     });
 
@@ -288,6 +290,36 @@ function addCar(){
         }
     });
 
+}
+
+
+function loadAllCars(){
+    $.ajax({
+        url : mainLink + "car",
+        success : function(res){
+
+            let cars = $(res.data);
+            $('#tblAllCar').empty();
+
+            console.log(cars)
+
+            for(let i = 0; i < cars.length; i++){
+                let carId = cars[i].carID;
+                let brand = cars[i].brand;
+                let color = cars[i].color;
+                let reg = cars[i].regNo;
+                let avl = cars[i].availability;
+                let fuel = cars[i].fuelType;
+                let wavier = cars[i].wavierPayment;
+                let passenger = cars[i].passenger;
+                let mil = cars[i].currentMileage;
+
+
+                let row =`<tr><td>${carId}</td><td>${brand}</td><td>${color}</td><td>${reg}</td><td>${avl}</td><td>${fuel}</td><td>${wavier}</td><td>${passenger}</td><td>${mil}</td></tr>`;
+                $('#tblAllCar').append(row);
+            }
+        }
+    });
 }
 
 
