@@ -83,6 +83,38 @@ $('#btnDriverReg').click(function () {
 let mainLink = "http://localhost:8080/Back_End_war/";
 
 
+
+// Customer
+
+function loadAllCustomers(){
+    $.ajax({
+        url : mainLink + "customer",
+        success : function(res){
+
+            let customers = $(res.data);
+            $('#tblCustomer').empty();
+
+            for(let i = 0; i < customers.length; i++){
+                let id = customers[i].customerID;
+                let name = customers[i].name;
+                let address = customers[i].address;
+                let email = customers[i].email;
+                let nic = customers[i].nicNo;
+
+                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic
+                }</td></tr>`;
+                $('#tblCustomer').append(row);
+            }
+        }
+    });
+}
+
+
+
+
+
+// Driver
+
 function addDriver(){
 
     let driverId = $('#inputDriverId').val();
@@ -123,30 +155,6 @@ function addDriver(){
 }
 
 
-function loadAllCustomers(){
-    $.ajax({
-        url : mainLink + "customer",
-        success : function(res){
-
-            let customers = $(res.data);
-            $('#tblCustomer').empty();
-
-            for(let i = 0; i < customers.length; i++){
-                let id = customers[i].customerID;
-                let name = customers[i].name;
-                let address = customers[i].address;
-                let email = customers[i].email;
-                let nic = customers[i].nicNo;
-
-                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic
-                }</td></tr>`;
-                $('#tblCustomer').append(row);
-            }
-        }
-    });
-}
-
-
 function loadAllDrivers(){
     $.ajax({
         url : mainLink + "driver",
@@ -166,6 +174,37 @@ function loadAllDrivers(){
         }
     });
 }
+
+
+
+
+
+
+// Car
+
+let carType;
+let fuelType;
+let passenger;
+let gear;
+
+
+$("#listType li a").click(function(){
+    var selText = $(this).text();
+    $('#btnCarType').text(selText);
+    carType = selText;
+});
+
+$("#listFuelType li a").click(function(){
+    var selText = $(this).text();
+    $('#btnFuelType').text(selText);
+    fuelType = selText;
+});
+
+function addCar(){
+
+
+}
+
 
 
 

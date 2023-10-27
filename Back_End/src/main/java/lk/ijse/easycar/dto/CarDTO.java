@@ -28,7 +28,7 @@ public class CarDTO {
     private String freeMileageMonthly;
     private String freeMileageMonthlyPrice;
     private String frontImage;
-    private String RearImage;
+    private String backImage;
     private String sideImage;
     private String interiorImage;
 
