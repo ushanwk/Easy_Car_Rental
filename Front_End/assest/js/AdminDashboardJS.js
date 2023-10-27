@@ -40,12 +40,14 @@ $('#dashboardPanel').show();
 $('#customerPanel').hide();
 $('#driverPanel').hide();
 $('#carPanel').hide();
+$('#allCarPanel').hide();
 
 $('#btnDashboard').click(function () {
     $('#dashboardPanel').show();
     $('#customerPanel').hide();
     $('#driverPanel').hide();
     $('#carPanel').hide();
+    $('#allCarPanel').hide();
 });
 
 $('#btnCustomer').click(function () {
@@ -53,6 +55,7 @@ $('#btnCustomer').click(function () {
     $('#dashboardPanel').hide();
     $('#driverPanel').hide();
     $('#carPanel').hide();
+    $('#allCarPanel').hide();
     loadAllCustomers();
 });
 
@@ -61,6 +64,7 @@ $('#btnDriver').click(function () {
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
     $('#carPanel').hide();
+    $('#allCarPanel').hide();
     loadAllDrivers();
 });
 
@@ -69,6 +73,15 @@ $('#btnCar').click(function () {
     $('#driverPanel').hide();
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
+    $('#allCarPanel').hide();
+});
+
+$('#btnCarAll').click(function () {
+    $('#carPanel').hide();
+    $('#driverPanel').hide();
+    $('#customerPanel').hide();
+    $('#dashboardPanel').hide();
+    $('#allCarPanel').show();
 });
 
 
