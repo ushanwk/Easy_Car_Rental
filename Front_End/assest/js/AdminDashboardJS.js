@@ -77,6 +77,10 @@ $('#btnDriverReg').click(function () {
     addDriver();
 });
 
+$('#btnCarAdd').click(function () {
+    addCar();
+});
+
 
 
 
@@ -183,9 +187,9 @@ function loadAllDrivers(){
 // Car
 
 let carType;
-let fuelType;
-let passenger;
-let gear;
+let carFuelType;
+let carPassenger;
+let carGear;
 
 
 $("#listType li a").click(function(){
@@ -197,11 +201,79 @@ $("#listType li a").click(function(){
 $("#listFuelType li a").click(function(){
     var selText = $(this).text();
     $('#btnFuelType').text(selText);
-    fuelType = selText;
+    carFuelType = selText;
+});
+
+$("#listPassenger li a").click(function(){
+    var selText = $(this).text();
+    $('#btnPassenger').text(selText);
+    carPassenger = selText;
+});
+
+$("#listGear li a").click(function(){
+    var selText = $(this).text();
+    $('#btnGear').text(selText);
+    carGear = selText;
 });
 
 function addCar(){
 
+    let type = carType;
+    let fuelType = carFuelType;
+    let passenger = carPassenger;
+    let transmissionType = carGear;
+    let carID = $('#inputCarId').val();
+    let backImage = $('#inputCarBackView').val();
+    let availability = "Available";
+    let brand = $('#inputCarBrand').val();
+    let color = $('#inputCarColor').val();
+    let currentMilage = $('#inputCarMilage').val();
+    let extraMilagePrice = $('#inputCarRentPriceExtraKm').val();
+    let freeMilageDailyPrice = $('#inputCarRentDaily').val();
+    let freeMilageDaily = $('#inputCarRentMilage').val();
+    let freeMilageMonthlyPrice = $('#inputCarRentMonthly').val();
+    let freeMilageMonthly = freeMilageDaily * 30;
+    let frontImage = $('#inputCarFrontView').val();
+    let interiorImage = $('#inputCarInteriorView').val();
+    let regNo = $('#inputRegNo').val();
+    let sideImage = $('#inputCarSidetView').val();
+    let wavierPayment = $('#inputCarWavier').val();
+
+    let car = {
+        type:type,
+        fuelType:fuelType,
+        passenger:passenger,
+        transmissionType:transmissionType,
+        carID:carID,
+        backImage:backImage,
+        availability:availability,
+        brand:brand,
+        color:color,
+        currentMilage:currentMilage,
+        extraMilagePrice:extraMilagePrice,
+        freeMilageDailyPrice:freeMilageDailyPrice,
+        freeMilageDaily:freeMilageDaily,
+        freeMilageMonthlyPrice:freeMilageMonthlyPrice,
+        freeMilageMonthly:freeMilageMonthly,
+        frontImage:frontImage,
+        interiorImage:interiorImage,
+        regNo:regNo,
+        sideImage:sideImage,
+        wavierPayment:wavierPayment
+    }
+
+    $.ajax({
+        url : mainLink + 'car',
+        method : "post",
+        data : JSON.stringify(car),
+        contentType : 'application/json',
+        success:function(){
+            console.log("Success")
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
 
 }
 
