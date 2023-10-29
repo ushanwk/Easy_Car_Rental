@@ -48,24 +48,22 @@ function addCustomer(){
         }
     }
 
-    // $.ajax({
-    //     url : mainLink + 'customer',
-    //     method : "post",
-    //     data : JSON.stringify(customer),
-    //     contentType : 'application/json',
-    //     success:function(){
-    //         console.log("Success")
-    //     },
-    //     error : function(){
-    //         console.log("Error")
-    //     }
-    // });
+    $.ajax({
+        url : mainLink + 'customer',
+        method : "post",
+        data : JSON.stringify(customer),
+        contentType : 'application/json',
+        success:function(){
+            console.log("Success")
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
 
 
 
    let formData = new FormData($('#imagesCus')[0]);
-
-    console.log(formData)
 
     $.ajax({
         url : mainLink + 'customer?customerId=' + "C001",

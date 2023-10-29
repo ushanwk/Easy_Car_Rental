@@ -272,6 +272,8 @@
   <!--Car-->
   <section class="container-fluid pt-5 ms-3" id="carPanel">
 
+<form id="carForm">
+
 
     <div>
       <div class="row">
@@ -314,6 +316,9 @@
               <div class="row">
 
                 <div class="col-sm ms-3 mt-3">
+
+
+
 
                   <div class="btn-group">
                     <button id="btnCarType" style="width: 8vw" type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -498,12 +503,12 @@
 
                 <div class="col-sm">
                   <label for="inputCarFrontView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Front View</label>
-                  <input class="form-control" type="file" id="inputCarFrontView">
+                  <input class="form-control" type="file" id="inputCarFrontView" name="frontImage">
                 </div>
 
                 <div class="col-sm">
                   <label for="inputCarBackView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Back View</label>
-                  <input class="form-control" type="file" id="inputCarBackView">
+                  <input class="form-control" type="file" id="inputCarBackView" name="backImage">
                 </div>
 
               </div>
@@ -515,12 +520,12 @@
 
                 <div class="col-sm">
                   <label for="inputCarSidetView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Side View</label>
-                  <input class="form-control" type="file" id="inputCarSidetView">
+                  <input class="form-control" type="file" id="inputCarSidetView" name="sideImage">
                 </div>
 
                 <div class="col-sm">
                   <label for="inputCarInteriorView" class="form-label" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 15px">Interior View</label>
-                  <input class="form-control" type="file" id="inputCarInteriorView">
+                  <input class="form-control" type="file" id="inputCarInteriorView" name="interiorImage">
                 </div>
 
               </div>
@@ -534,6 +539,7 @@
 
     </div>
 
+</form>
 
   </section>
 

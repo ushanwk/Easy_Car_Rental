@@ -277,18 +277,39 @@ function addCar(){
         wavierPayment:wavierPayment
     }
 
+    // $.ajax({
+    //     url : mainLink + 'car',
+    //     method : "post",
+    //     data : JSON.stringify(car),
+    //     contentType : 'application/json',
+    //     success:function(){
+    //         console.log("Success")
+    //     },
+    //     error : function(){
+    //         console.log("Error")
+    //     }
+    // });
+
+
+
+    let formData = new FormData($('#carForm')[0]);
+
     $.ajax({
-        url : mainLink + 'car',
+        url : mainLink + 'car?carID=' + carID,
         method : "post",
-        data : JSON.stringify(car),
-        contentType : 'application/json',
+        async : false,
+        data : formData,
+        processData: false,
+        contentType: false,
         success:function(){
-            console.log("Success")
+            console.log("Image Added Success")
         },
         error : function(){
             console.log("Error")
         }
     });
+
+
 
 }
 
