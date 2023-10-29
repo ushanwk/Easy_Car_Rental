@@ -277,18 +277,18 @@ function addCar(){
         wavierPayment:wavierPayment
     }
 
-    // $.ajax({
-    //     url : mainLink + 'car',
-    //     method : "post",
-    //     data : JSON.stringify(car),
-    //     contentType : 'application/json',
-    //     success:function(){
-    //         console.log("Success")
-    //     },
-    //     error : function(){
-    //         console.log("Error")
-    //     }
-    // });
+    $.ajax({
+        url : mainLink + 'car',
+        method : "post",
+        data : JSON.stringify(car),
+        contentType : 'application/json',
+        success:function(){
+            console.log("Success")
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
 
 
 

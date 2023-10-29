@@ -25,7 +25,7 @@ public class CarController {
     @PostMapping(params = {"carID"})
     public ResponseUtil addCar(@ModelAttribute CarImageDTO carImageDTO, String carID){
         carImageDTO.setCarID(carID);
-        System.out.println(carID);
+        carService.addCar(carImageDTO, carID);
         return new ResponseUtil("Ok", "Car Successfully Added", carID);
     }
 

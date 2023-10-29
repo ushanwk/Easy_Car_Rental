@@ -46,30 +46,30 @@ public class CustomerServiceImpl implements CustomerService {
 
         try {
 
-//            if (dto.getFrontImage () != null && dto.getBackImage () != null) {
+            if (dto.getFrontImage () != null && dto.getBackImage () != null) {
 
-                byte[] nicFileBytes = dto.getFrontImage ().getBytes ();
-                byte[] licenseFileBytes = dto.getBackImage ().getBytes ();
+                byte[] frontFileBytes = dto.getFrontImage ().getBytes ();
+                byte[] backFileBytes = dto.getBackImage ().getBytes ();
 
 
                 String projectPath = "/Users/ushan_kaushalya/SoftwareEngineeringEDU/IJSE/2nd Semester/Advance API Development/CourseWork/Easy_Car_Rental/Front_End/assest";
                 Path frontLocation = Paths.get (projectPath + "/projectimages/customerimages/frontimage/front_" + dto.getCustomerID () + ".jpeg");
                 Path backLocation = Paths.get (projectPath + "/projectimages/customerimages/backimage/back_" + dto.getCustomerID () + ".jpeg");
 
-                Files.write (frontLocation, nicFileBytes);
-                Files.write (backLocation, licenseFileBytes);
+                Files.write (frontLocation, frontFileBytes);
+                Files.write (backLocation, backFileBytes);
 
                 dto.getFrontImage ().transferTo (frontLocation);
                 dto.getBackImage ().transferTo (backLocation);
-//            }
+            }
 
         } catch (IOException e) {
             System.out.println (e);
             throw new RuntimeException (e);
         }
 
-        customer.setFrontImage ("/assets/projectImages/bucket/customer/nic/nic_" + dto.getCustomerID ()+".jpeg");
-        customer.setBackImage ("/assets/projectImages/bucket/customer/license/license_" + dto.getCustomerID ()+".jpeg");
+        customer.setFrontImage ("/assets/projectImages/customerimages/frontimage/front_" + dto.getCustomerID ()+".jpeg");
+        customer.setBackImage ("/assets/projectImages/customerimages/frontimage/back_" + dto.getCustomerID ()+".jpeg");
 
         customerRepo.save(customer);
 
