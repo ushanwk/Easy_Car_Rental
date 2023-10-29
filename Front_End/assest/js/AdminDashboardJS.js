@@ -284,6 +284,7 @@ function addCar(){
         contentType : 'application/json',
         success:function(){
             console.log("Success")
+            saveCarImages();
         },
         error : function(){
             console.log("Error")
@@ -291,6 +292,16 @@ function addCar(){
     });
 
 
+
+
+}
+
+
+
+
+function saveCarImages(){
+
+    let carID = $('#inputCarId').val();
 
     let formData = new FormData($('#carForm')[0]);
 
@@ -308,8 +319,6 @@ function addCar(){
             console.log("Error")
         }
     });
-
-
 
 }
 

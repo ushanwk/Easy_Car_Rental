@@ -55,6 +55,7 @@ function addCustomer(){
         contentType : 'application/json',
         success:function(){
             console.log("Success")
+            saveCustomerImages();
         },
         error : function(){
             console.log("Error")
@@ -63,12 +64,18 @@ function addCustomer(){
 
 
 
-   let formData = new FormData($('#imagesCus')[0]);
+
+
+}
+
+
+function saveCustomerImages(){
+    let formData = new FormData($('#imagesCus')[0]);
 
     $.ajax({
         url : mainLink + 'customer?customerId=' + "C001",
         method : "post",
-        async : false,
+        sync:true,
         data : formData,
         processData: false,
         contentType: false,
@@ -79,5 +86,4 @@ function addCustomer(){
             console.log("Error")
         }
     });
-
 }
