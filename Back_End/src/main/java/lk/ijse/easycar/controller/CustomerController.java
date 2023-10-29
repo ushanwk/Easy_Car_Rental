@@ -1,12 +1,16 @@
 package lk.ijse.easycar.controller;
 
 import lk.ijse.easycar.dto.CustomerDTO;
+import lk.ijse.easycar.dto.CustomerImageDTO;
 import lk.ijse.easycar.dto.UserDTO;
 import lk.ijse.easycar.service.CustomerService;
 import lk.ijse.easycar.service.UserService;
 import lk.ijse.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.File;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/customer")
@@ -24,6 +28,14 @@ public class CustomerController {
         customerService.addCustomer(customerDTO);
         return new ResponseUtil("Ok", "Customer Successfully Added", customerDTO);
     }
+
+    @PostMapping(params = {"customerId"})
+    public ResponseUtil addCustomer(@ModelAttribute CustomerImageDTO customerImageDTO, String customerId){
+        customerImageDTO.setCustomerID(customerId);
+        customerService.addCustomer(customerImageDTO);
+        return new ResponseUtil("Ok", "Customer Image Successfully Added", customerId);
+    }
+
 
     @GetMapping
     public ResponseUtil getAllCustomer(){
