@@ -279,20 +279,17 @@ function addCar(){
 
     $.ajax({
         url : mainLink + 'car',
-        method : "post",
+        method : 'post',
         data : JSON.stringify(car),
         contentType : 'application/json',
         success:function(){
-            console.log("Success")
+            console.log("Success");
             saveCarImages();
         },
         error : function(){
-            console.log("Error")
+            console.log("Error");
         }
     });
-
-
-
 
 }
 
@@ -308,6 +305,7 @@ function saveCarImages(){
     $.ajax({
         url : mainLink + 'car?carID=' + carID,
         method : "post",
+        header:"Access-Control-Allow-Origin",
         async : false,
         data : formData,
         processData: false,

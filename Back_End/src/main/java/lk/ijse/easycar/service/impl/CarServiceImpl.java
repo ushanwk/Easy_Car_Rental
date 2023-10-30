@@ -39,7 +39,7 @@ public class CarServiceImpl implements CarService {
 
         try {
 
-            if(dto.getFrontImage() != null && dto.getBackImage() != null && dto.getSideImage() != null && dto.getInteriorImage() != null){
+//            if(dto.getFrontImage() != null && dto.getBackImage() != null && dto.getSideImage() != null && dto.getInteriorImage() != null){
 
                 byte[] frontFileBytes = dto.getFrontImage ().getBytes ();
                 byte[] backFileBytes = dto.getBackImage ().getBytes ();
@@ -63,7 +63,7 @@ public class CarServiceImpl implements CarService {
                 dto.getInteriorImage().transferTo (interiorLocation);
                 dto.getSideImage().transferTo (sidetLocation);
 
-            }
+//            }
 
         }catch(IOException e){
             System.out.println (e);
