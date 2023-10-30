@@ -163,6 +163,7 @@ function addDriver(){
         contentType : 'application/json',
         success:function(){
             console.log("Success");
+            addDriverimage();
             loadAllDrivers();
         },
         error : function(){
@@ -171,6 +172,31 @@ function addDriver(){
     });
 
 }
+
+
+function addDriverimage(){
+
+    let driverId = $('#inputDriverId').val();
+
+    let formData = new FormData($('#driverForm')[0]);
+
+    $.ajax({
+        url : mainLink + 'driver?driverId=' + driverId,
+        method : "post",
+        async : false,
+        data : formData,
+        processData: false,
+        contentType: false,
+        success:function(){
+            console.log("Image Added Success")
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
+
+}
+
 
 
 function loadAllDrivers(){
