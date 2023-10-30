@@ -33,7 +33,7 @@ function addCustomer(){
 
 
     let customer = {
-        customerID:"C001",
+        customerID:username,
         name:name,
         address:address,
         email:email,

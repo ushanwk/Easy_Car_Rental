@@ -91,7 +91,12 @@ $.ajax({
 
 function bindCartBtn() {
     $('.btnCart').click(function () {
-        alert($(this).parent().children(":eq(3)").text())
+        let car = $(this).parent().children(":eq(3)").text();
+        let carName = $(this).parent().children(":eq(1)").text();
+
+        let row =`<tr><td>${carName} x 1</td></tr>`;
+        $('#tblCartItems').append(row);
+
     })
 }
 
