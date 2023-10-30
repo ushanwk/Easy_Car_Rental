@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="242be641-19b9-4d06-852e-f4a3bc03c566" name="EasyCarRental@localhost Mapping">
+      <data-sources db="ca54a02e-c02c-4693-ab07-28bce0e50acc" />
+      <scope>
+        <node kind="schema" qname="EasyCarRental" />
+      </scope>
+    </mapping>
+  </component>
+</project>

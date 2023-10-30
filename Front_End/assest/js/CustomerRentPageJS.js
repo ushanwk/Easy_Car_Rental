@@ -23,19 +23,17 @@ $.ajax({
             let mil = cars[i].currentMileage;
 
             let car = `
+
             
-            <div class="col-3" style="height: 40vh; border: 1px black solid">
 
-                    <h1 class="mt-5">Brand - ${brand}</h1>
-                    <h1>Color - ${color}</h1>
-
-                </div>`
+            `
 
 
             $('#cars').append(car);
 
         }
     }
+
 });
 
 
