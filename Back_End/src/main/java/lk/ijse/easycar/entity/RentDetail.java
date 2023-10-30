@@ -15,21 +15,25 @@ import java.io.Serializable;
 public class RentDetail implements Serializable {
 
     @Id
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "rentID",referencedColumnName = "rentID",nullable = false)
-    private Rental rentID;
-
+    private String rentID;
     @Id
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "carID",referencedColumnName = "carID",nullable = false)
-    private Car carID;
+    private String carID;
 
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "driverID",referencedColumnName = "driverID",nullable = false)
-    private Driver driverID;
+    private String driverID;
 
-    @OneToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "paymentID",referencedColumnName = "paymentID",nullable = false)
-    private Payment paymentID;
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Payment payment;
+
+    @ManyToOne
+    @JoinColumn(name = "rentID",referencedColumnName = "RentID",insertable = false,updatable = false)
+    private Rental rent;
+
+    @ManyToOne
+    @JoinColumn(name = "carID",referencedColumnName = "carID",insertable = false,updatable = false)
+    private Car car;
+
+    @ManyToOne
+    @JoinColumn(name = "driverID",referencedColumnName = "driverID",insertable = false,updatable = false)
+    private Driver driver;
 
 }

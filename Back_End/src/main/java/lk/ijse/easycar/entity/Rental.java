@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -14,15 +15,12 @@ import javax.persistence.*;
 public class Rental {
 
     @Id
-    private String rentID;
-
+    private String RentID;
+    private String FullPaymentStatus;
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
-    private Customer cusID;
-
-    private String pickupDate;
-    private String pickupTime;
-    private String status;
-    private String declineReason;
+    @JoinColumn(name = "customerID",referencedColumnName = "cusID",nullable = false)
+    private Customer customerID;
+    @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
+    private List<RentDetail> rentDetails;
 
 }
