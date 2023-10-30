@@ -32,6 +32,8 @@ $.ajax({
                     <h1 class="mt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">${brand}</h1>
 
                     <img src="../assest/images/customerrentpage/Star.png" width="40%">
+                    
+                    <h1 style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 1px">${carId}</h1>
 
                     <div class="mt-3" style="width: 100%; background-color: #C2C3C2; height: 1px"></div>
 
@@ -71,7 +73,7 @@ $.ajax({
 
                     <div class="container mt-3" style="border-radius: 5px; background-color: #FFA633; text-align: center;font-family: 'Fira Sans', sans-serif; font-weight: 700; font-size: 20px; height: 4vh">Rs. ${price} per Day</div>
 
-                    <button id="btnAddtoCart" type="button" class="btn btn-dark container mt-3" >Add to Cart</button>
+                    <button id="btnAddtoCart" type="button" class="btn btn-dark container mt-3 btnCart">Add to Cart</button>
 
                 </div>
             `
@@ -79,10 +81,19 @@ $.ajax({
             $('#cars').append(car);
 
         }
+
+        bindCartBtn();
+
     }
 
 });
 
+
+function bindCartBtn() {
+    $('.btnCart').click(function () {
+        alert($(this).parent().children(":eq(3)").text())
+    })
+}
 
 
 

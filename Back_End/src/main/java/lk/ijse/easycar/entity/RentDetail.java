@@ -25,7 +25,7 @@ public class RentDetail implements Serializable {
     private Payment payment;
 
     @ManyToOne
-    @JoinColumn(name = "rentID",referencedColumnName = "RentID",insertable = false,updatable = false)
+    @JoinColumn(name = "rentID",referencedColumnName = "rentID",insertable = false,updatable = false)
     private Rental rent;
 
     @ManyToOne
