@@ -97,7 +97,6 @@ $('#btnCarAdd').click(function () {
 
 
 
-
 let mainLink = "http://localhost:8080/Back_End_war/";
 
 
