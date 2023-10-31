@@ -165,6 +165,7 @@ $('#btnPlaceOrder').click(function () {
 
         let carId = $(this).find('td').eq(0).text();
         let driverId = "NOT"
+
         let payment = {
             paymentID : "P00-" + count,
             waiverDeductions : 0,
@@ -185,12 +186,35 @@ $('#btnPlaceOrder').click(function () {
 
     });
 
+
+    let rental = {
+        rentID:rentID,
+        customerID:"C00-001",
+        pickupDate:pickupDate,
+        pickupTime:pickupTime,
+        status:"PENDING",
+        declineReason:"NOT YET",
+        rentDetails:rentDetails
+    }
+
     count = 0;
 
-    console.log(rentDetails)
+    console.log(rental)
 
 
-    
+    $.ajax({
+        url : mainLink + 'customerrent',
+        method : "post",
+        data : JSON.stringify(rental),
+        contentType : 'application/json',
+        success:function(){
+            console.log("Success")
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
+
 
 
 });
