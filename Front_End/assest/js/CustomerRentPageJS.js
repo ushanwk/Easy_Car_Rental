@@ -9,8 +9,6 @@ $.ajax({
         let cars = $(res.data);
         $('#tblAllCar').empty();
 
-        console.log(cars);
-
         for(let i = 0; i < cars.length; i++){
             let carId = cars[i].carID;
             let brand = cars[i].brand;
@@ -82,7 +80,19 @@ $.ajax({
 
         }
 
-        bindCartBtn();
+        $('.btnCart').click(function () {
+            let carIdClicked = $(this).parent().children(":eq(3)").text();
+
+
+            for (let k= 0; k < cars.length; k++){
+                if(cars[k].carID == carIdClicked){
+
+
+
+                }
+            }
+
+        })
 
     }
 
@@ -91,12 +101,8 @@ $.ajax({
 
 function bindCartBtn() {
     $('.btnCart').click(function () {
-        let car = $(this).parent().children(":eq(3)").text();
-        let carName = $(this).parent().children(":eq(1)").text();
-
-        let row =`<tr><td>${carName} x 1</td></tr>`;
-        $('#tblCartItems').append(row);
-
+        let carId = $(this).parent().children(":eq(3)").text();
+        return carId;
     })
 }
 
