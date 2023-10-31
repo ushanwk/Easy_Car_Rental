@@ -86,7 +86,7 @@ $.ajax({
 
             for (let k= 0; k < cars.length; k++){
                 if(cars[k].carID == carIdClicked){
-
+                    let carId = cars[k].carID;
                     let reg = cars[k].regNo;
                     let brand = cars[k].brand;
                     let transmissionType = cars[k].transmissionType;
@@ -95,7 +95,8 @@ $.ajax({
                     let wavier = cars[k].wavierPayment;
                     let price = cars[k].freeMileageDailyPrice;
 
-                    let row =`<tr><td>${brand}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
+
+                    let row =`<tr><td class="visually-hidden">${carId}</td><td>${brand}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
                                             <td><input type="file" class="form-control" id="inputSlipImg"></td>  
                                          <td><input class="form-check-input form-check form-switch bg-warning" type="checkbox" id="flexSwitchCheckDefault"></td>
                                          <td><button type="button" class="btn btn-danger cartDeleteBtn">Remove</button></td>
@@ -116,10 +117,7 @@ $.ajax({
 
 
 function removeRow() {
-    // Unbind the click event handler for the 'cartDeleteBtn' class
     $('.cartDeleteBtn').off('click');
-
-    // Bind the click event handler for the 'cartDeleteBtn' class
     $('.cartDeleteBtn').click(function () {
         $(this).closest('tr').remove();
     });
@@ -159,9 +157,37 @@ $('#btnPlaceOrder').click(function () {
     let status = "PENDING";
     let declineReason = "NOT YET";
 
+    let rentDetails = [];
+
+    var count = 1;
+
     $("#tblCart > tr").each(function () {
-        console.log($(this).find('td').eq(0).text());
+
+        let carId = $(this).find('td').eq(0).text();
+        let driverId = "NOT"
+        let payment = {
+            paymentID : "P00-" + count,
+            waiverDeductions : 0,
+            waiverSlip : null,
+            extraMileagePayment : 0
+        }
+
+        let rentDetail = {
+            rentID:rentID,
+            carID:carId,
+            driverID:driverId,
+            payment:payment
+        }
+
+        count++;
+
+        rentDetails.push(rentDetail);
+
     });
+
+    count = 0;
+
+    console.log(rentDetails)
 
 });
 
