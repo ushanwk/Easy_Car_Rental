@@ -7,12 +7,14 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.io.Serializable;
 
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @ToString
-public class RentDetail implements Serializable {
+@IdClass(RentDetailPK.class)
+public class RentDetail {
 
     @Id
     private String rentID;

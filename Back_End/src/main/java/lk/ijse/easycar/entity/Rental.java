@@ -17,9 +17,11 @@ public class Rental {
     @Id
     private String rentID;
     private String fullPaymentStatus;
+
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
     private Customer customerID;
+
     @OneToMany(mappedBy = "rent", cascade = CascadeType.ALL)
     private List<RentDetail> rentDetails;
 
