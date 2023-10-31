@@ -95,7 +95,9 @@ $.ajax({
                     let wavier = cars[k].wavierPayment;
                     let price = cars[k].freeMileageDailyPrice;
 
-                    let row =`<tr><td>${brand}</td><td>${transmissionType}</td><td>${passenger}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>  
+                    let row =`<tr><td>${brand}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
+                                            <td><input type="file" class="form-control" id="inputSlipImg"></td>  
+                                         <td><input class="form-check-input form-check form-switch bg-warning" type="checkbox" id="flexSwitchCheckDefault"></td>
                                          <td><button type="button" class="btn btn-danger cartDeleteBtn">Remove</button></td>
                                         </tr>`;
 
