@@ -189,6 +189,10 @@ $('#btnPlaceOrder').click(function () {
 
     console.log(rentDetails)
 
+
+    
+
+
 });
 
 
