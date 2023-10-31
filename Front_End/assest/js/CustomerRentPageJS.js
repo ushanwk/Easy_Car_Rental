@@ -150,10 +150,18 @@ function bindCartBtn() {
 
 
 
-
 $('#btnPlaceOrder').click(function () {
 
+    let rentID = $('#inputRentId').val();
+    let customerID = "C00-001";
+    let pickupDate = $('#inputPickUpdate').val();
+    let pickupTime = $('#inputPickUpTime').val();
+    let status = "PENDING";
+    let declineReason = "NOT YET";
 
+    $("#tblCart > tr").each(function () {
+        console.log($(this).find('td').eq(0).text());
+    });
 
 });
 
