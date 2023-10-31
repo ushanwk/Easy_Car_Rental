@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -13,10 +15,11 @@ import lombok.Setter;
 public class RentalDTO {
 
     private String rentID;
-    private Customer cusID;
+    private String customerID;
     private String pickupDate;
     private String pickupTime;
     private String status;
     private String declineReason;
+    private List<RentDetailDTO> rentDetails;
 
 }

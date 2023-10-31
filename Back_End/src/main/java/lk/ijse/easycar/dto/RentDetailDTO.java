@@ -15,9 +15,9 @@ import lombok.Setter;
 @Setter
 public class RentDetailDTO {
 
-    private Rental rentID;
-    private Car carID;
-    private Driver driverID;
-    private Payment paymentID;
+    private String rentID;
+    private String carID;
+    private String driverID;
+    private PaymentDTO paymen;
 
 }

@@ -147,3 +147,13 @@ function bindCartBtn() {
 
 
 
+
+
+$('#btnPlaceOrder').click(function () {
+
+
+
+});
+
+
+

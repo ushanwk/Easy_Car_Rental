@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 public class PaymentDTO {
 
+    private String paymentID;
     private double waiverDeductions;
     private String waiverSlip;
     private double extraMileagePayment;
