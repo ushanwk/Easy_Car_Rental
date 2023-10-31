@@ -18,6 +18,6 @@ public class RentDetailDTO {
     private String rentID;
     private String carID;
     private String driverID;
-    private PaymentDTO paymen;
+    private PaymentDTO payment;
 
 }

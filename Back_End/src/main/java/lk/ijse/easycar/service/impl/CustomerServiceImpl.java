@@ -1,6 +1,7 @@
 package lk.ijse.easycar.service.impl;
 
 import lk.ijse.easycar.dto.CustomerDTO;
+import lk.ijse.easycar.dto.CustomerIdGenerateDTO;
 import lk.ijse.easycar.dto.CustomerImageDTO;
 import lk.ijse.easycar.entity.Customer;
 import lk.ijse.easycar.repo.CustomerRepo;
@@ -73,6 +74,11 @@ public class CustomerServiceImpl implements CustomerService {
 
         customerRepo.save(customer);
 
+    }
+
+    @Override
+    public CustomerIdGenerateDTO customerIdGenerate() {
+        return new CustomerIdGenerateDTO(customerRepo.getLastIndex());
     }
 
 }

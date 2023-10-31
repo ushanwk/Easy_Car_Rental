@@ -1,6 +1,7 @@
 package lk.ijse.easycar.controller;
 
 import lk.ijse.easycar.dto.CustomerDTO;
+import lk.ijse.easycar.dto.CustomerIdGenerateDTO;
 import lk.ijse.easycar.dto.CustomerImageDTO;
 import lk.ijse.easycar.dto.UserDTO;
 import lk.ijse.easycar.service.CustomerService;
@@ -40,6 +41,12 @@ public class CustomerController {
     @GetMapping
     public ResponseUtil getAllCustomer(){
         return new ResponseUtil("Ok", "All Customers", customerService.loadAllCustomer());
+    }
+
+
+    @GetMapping(path = "/IdGenerate")
+    public @ResponseBody CustomerIdGenerateDTO customerIdGenerate() {
+        return customerService.customerIdGenerate();
     }
 
 }

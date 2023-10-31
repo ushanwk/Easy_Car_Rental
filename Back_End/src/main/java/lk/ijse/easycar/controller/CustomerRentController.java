@@ -13,6 +13,10 @@ public class CustomerRentController {
     @PostMapping
     public ResponseUtil addCustomer(){
 
+
+
+        return new ResponseUtil("Ok", "Customer Successfully Added", null);
+
     }
 
 }
