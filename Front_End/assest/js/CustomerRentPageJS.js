@@ -164,7 +164,7 @@ $('#btnPlaceOrder').click(function () {
     $("#tblCart > tr").each(function () {
 
         let carId = $(this).find('td').eq(0).text();
-        let driverId = "NOT"
+        let driverId = "Dr001"
 
         let payment = {
             paymentID : "P00-" + count,
