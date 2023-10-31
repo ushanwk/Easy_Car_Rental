@@ -56,7 +56,7 @@
         </section>
 
 
-        <section class="container mt-5" style="position: relative">
+        <section class="container mt-5" style="position: relative" id="carBowsing">
 
             <div class="container">
 
@@ -67,7 +67,7 @@
 
             </div>
 
-            <div class="container" style="position: absolute; box-shadow: 0px 1px 10px #C2C3C2; height:30vh; width: 20vw; background-color: white; right: 0; top: 0; border-radius: 5px">
+            <div class="container" style="position: absolute; box-shadow: 0px 1px 10px #C2C3C2; height:30vh; width: 20vw; background-color: white; right: 0; top: 0; border-radius: 5px; display: block">
 
                 <h1 class="mt-4" style="font-family: 'Fira Sans', sans-serif; font-weight: 700; font-size: 30px; color: black; text-align: center">Cart Details</h1>
                 <h1 class="mt-4 ms-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px; color: black; text-align: center">Check your Billing, Rental details and prodeed your Payment</h1>
@@ -81,22 +81,47 @@
 
         <section id="cartTableSec">
 
-            <div class="container">
+
+            <div class="container pt-5">
+
+                <div style="width: 20vw;">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <button id="btnCancelOrder" type="button" class="btn btn-danger">Cancel Rent</button>
+                            </div>
+                            <div class="col-sm">
+                                <button id="btnPlaceOrder" type="button" class="btn btn-dark">Place Rent</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
 
                 <table class="table align-middle mb-0 mt-3 bg-white" style="border: #FFA633 1px solid;">
 
                     <thead class="bg-light">
                     <tr style="background-color: #FFA633">
-                        <th>Car</th>
-                        <th>License Number</th>
-                        <th>Email</th>
+                        <th>Register No</th>
+                        <th>Brand</th>
+                        <th>Transmission Type</th>
+                        <th>Passengers</th>
+                        <th>Fuel Type</th>
+                        <th>Daily Charge</th>
+                        <th>Wavier Payment</th>
+                        <th>Wavier Payment Slip</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
 
 
-                    <tbody id="tblDriver">
+                    <tbody id="tblCart">
 
                     </tbody>
+
                 </table>
 
             </div>

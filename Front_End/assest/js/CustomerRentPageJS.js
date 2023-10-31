@@ -87,7 +87,20 @@ $.ajax({
             for (let k= 0; k < cars.length; k++){
                 if(cars[k].carID == carIdClicked){
 
+                    let reg = cars[k].regNo;
+                    let brand = cars[k].brand;
+                    let transmissionType = cars[k].transmissionType;
+                    let passenger = cars[k].passenger;
+                    let fuel = cars[k].fuelType;
+                    let wavier = cars[k].wavierPayment;
+                    let price = cars[k].freeMileageDailyPrice;
 
+                    let row =`<tr><td>${reg}</td><td>${brand}</td><td>${transmissionType}</td><td>${passenger}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
+                                        <td><input class="form-control" type="file" id="inputNicFront" name="frontImage"></td>
+                                         <td><button type="button" class="btn btn-danger">Remove</button></td>
+                                        </tr>`;
+
+                    $('#tblCart').append(row);
 
                 }
             }
@@ -96,6 +109,19 @@ $.ajax({
 
     }
 
+});
+
+$('#cartTableSec').hide();
+
+$('#btnAddtoCart').click(function () {
+    $('#cartTableSec').show();
+    $('#carBowsing').hide()
+});
+
+$('#btnCancelOrder').click(function () {
+    $('#cartTableSec').hide();
+    $('#carBowsing').show()
+    $('#tblCart').empty();
 });
 
 
