@@ -95,12 +95,13 @@ $.ajax({
                     let wavier = cars[k].wavierPayment;
                     let price = cars[k].freeMileageDailyPrice;
 
-                    let row =`<tr><td>${reg}</td><td>${brand}</td><td>${transmissionType}</td><td>${passenger}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
-                                        <td><input class="form-control" type="file" id="inputNicFront" name="frontImage"></td>
-                                         <td><button type="button" class="btn btn-danger">Remove</button></td>
+                    let row =`<tr><td>${brand}</td><td>${transmissionType}</td><td>${passenger}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>  
+                                         <td><button type="button" class="btn btn-danger cartDeleteBtn">Remove</button></td>
                                         </tr>`;
 
                     $('#tblCart').append(row);
+
+                    removeRow();
 
                 }
             }
@@ -110,6 +111,18 @@ $.ajax({
     }
 
 });
+
+
+function removeRow() {
+    // Unbind the click event handler for the 'cartDeleteBtn' class
+    $('.cartDeleteBtn').off('click');
+
+    // Bind the click event handler for the 'cartDeleteBtn' class
+    $('.cartDeleteBtn').click(function () {
+        $(this).closest('tr').remove();
+    });
+}
+
 
 $('#cartTableSec').hide();
 
