@@ -151,7 +151,7 @@ function addDriver(){
         user:{
             username:username,
             password:password,
-            Role:"DRIVER"
+            role:"DRIVER"
         }
     }
 
