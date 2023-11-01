@@ -9,7 +9,6 @@ import lombok.ToString;
 @ToString
 public class CustomerIdGenerateDTO {
         private String value;
-
         public CustomerIdGenerateDTO(String lastIndex) {
             this.value=lastIndex;
         }

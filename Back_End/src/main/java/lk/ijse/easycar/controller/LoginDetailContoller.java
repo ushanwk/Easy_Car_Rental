@@ -1,14 +1,12 @@
 package lk.ijse.easycar.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.easycar.dto.CustomerIdGenerateDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/logindetail")
 @CrossOrigin
 public class LoginDetailContoller {
-
-
 
 }
