@@ -17,7 +17,6 @@ $('#btnSignIn').click(function () {
             console.log(users)
 
             for(let i = 0; i < users.length; i++){
-
                 if(users[i].username == username){
                     rightUsername = i;
                     break;
@@ -25,21 +24,22 @@ $('#btnSignIn').click(function () {
             }
 
             if (rightUsername == -1){
-                alert("Invalid Username or Password !")
+                alert("Invalid Username or Password !");
             }else{
 
                 if(users[rightUsername].password == password){
 
                     if(users[rightUsername].role == "CUSTOMER"){
                         window.open("../pages/LogedBrowsePage.html","_self");
-                    }else {
+                    }else if(users[rightUsername].role == "ADMIN"){
+                        window.open("../pages/AdminDashboardPage.html","_self");
+                    } else {
                         alert("Driver")
                     }
 
                 }else {
-                    alert("Invalid Username or Password !")
+                    alert("Invalid Username or Password !");
                 }
-
             }
 
 
