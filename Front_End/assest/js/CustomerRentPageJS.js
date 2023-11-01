@@ -24,9 +24,9 @@ $.ajax({
             let frontImg = cars[i].frontImage;
 
             let car = `
-            <div class="col-3" style="height: 64vh; box-shadow: 0px 1px 10px #C2C3C2; border-radius: 5px">
+            <div class="col-3" style="height: 65vh; box-shadow: 0px 1px 10px #C2C3C2; border-radius: 5px">
 
-                    <img class="mt-2" src="../..${frontImg}" width="100%" style="border-radius: 5px">
+                    <img class="mt-2" src="../..${frontImg}" style="border-radius: 5px; width: 100%; height: 22vh">
 
                     <h1 class="mt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">${brand}</h1>
 
