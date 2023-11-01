@@ -21,13 +21,19 @@ public class CarController {
         return new ResponseUtil("Ok", "Car Successfully Added", carDTO);
     }
 
-
     @PostMapping(params = {"carID"})
     public ResponseUtil addCar(@ModelAttribute CarImageDTO carImageDTO, String carID){
         carImageDTO.setCarID(carID);
         carService.addCar(carImageDTO, carID);
         return new ResponseUtil("Ok", "Car Successfully Added", carID);
     }
+
+    @PostMapping(params = {"avlCarId"})
+    public ResponseUtil addCar(String avlCarId){
+        carService.addCar(avlCarId);
+        return new ResponseUtil("Ok", "Car Successfully Updated", avlCarId);
+    }
+
 
 
     @GetMapping

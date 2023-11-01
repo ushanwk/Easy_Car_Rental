@@ -9,6 +9,8 @@ public interface CarService {
 
     void addCar(CarDTO carDTO);
 
+    void addCar(String avlCarId);
+
     void addCar(CarImageDTO carImageDTO, String carID);
 
     List<CarDTO> loadAllCar();

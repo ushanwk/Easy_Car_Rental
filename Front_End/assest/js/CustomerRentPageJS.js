@@ -76,7 +76,11 @@ $.ajax({
                 </div>
             `
 
-            $('#cars').append(car);
+            if(avl == "Available"){
+                $('#cars').append(car);
+            }
+
+
 
         }
 
@@ -164,10 +168,23 @@ $('#btnPlaceOrder').click(function () {
     $("#tblCart > tr").each(function () {
 
         let carId = $(this).find('td').eq(0).text();
+
+        $.ajax({
+            url : mainLink + 'car?avlCarId=' + carId,
+            method : "post",
+            success:function(){
+                console.log("Success")
+                saveCustomerImages();
+            },
+            error : function(){
+                console.log("Error")
+            }
+        });
+
         let driverId = "Dr001"
 
         let payment = {
-            paymentID : "P00-" + count,
+            paymentID : "P00-" + rentID + "-" + count,
             waiverDeductions : 0,
             waiverSlip : null,
             extraMileagePayment : 0
@@ -199,21 +216,20 @@ $('#btnPlaceOrder').click(function () {
 
     count = 0;
 
-    console.log(rental)
+    // $.ajax({
+    //     url : mainLink + 'customerrent',
+    //     method : "post",
+    //     data : JSON.stringify(rental),
+    //     contentType : 'application/json',
+    //     success:function(){
+    //         console.log("Success");
+    //         $('#tblCart').empty();
+    //     },
+    //     error : function(){
+    //         console.log("Error")
+    //     }
+    // });
 
-
-    $.ajax({
-        url : mainLink + 'customerrent',
-        method : "post",
-        data : JSON.stringify(rental),
-        contentType : 'application/json',
-        success:function(){
-            console.log("Success")
-        },
-        error : function(){
-            console.log("Error")
-        }
-    });
 
 
 
