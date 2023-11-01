@@ -77,10 +77,10 @@ public class CarServiceImpl implements CarService {
             throw new RuntimeException (e);
         }
 
-        car.setFrontImage ("/assets/projectImages/carimages/frontimages/front_" + dto.getCarID () + ".jpeg");
-        car.setBackImage ("/assets/projectImages/carimages/backimages/back_" + dto.getCarID () + ".jpeg");
-        car.setSideImage ("/assets/projectImages/carimages/sideimages/side_" + dto.getCarID () + ".jpeg");
-        car.setFrontImage ("/assets/projectImages/carimages/interiorimages/interior" + dto.getCarID () + ".jpeg");
+        car.setFrontImage ("/assest/projectImages/carimages/frontimages/front_" + dto.getCarID () + ".jpeg");
+        car.setBackImage ("/assest/projectImages/carimages/backimages/back_" + dto.getCarID () + ".jpeg");
+        car.setSideImage ("/assest/projectImages/carimages/sideimages/side_" + dto.getCarID () + ".jpeg");
+        car.setInteriorImage ("/assest/projectImages/carimages/interiorimages/interior_" + dto.getCarID () + ".jpeg");
 
 
     }

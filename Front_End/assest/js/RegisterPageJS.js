@@ -32,10 +32,11 @@ function addCustomer(){
     let nicBack = $('#inputNicBack').val();
     let username = $('#inputUsername').val();
     let password = $('#inputPassword').val();
+    let cusId = $('#txtCusID').text();
 
 
     let customer = {
-        customerID:username,
+        customerID:cusId,
         name:name,
         address:address,
         email:email,
@@ -75,7 +76,7 @@ function saveCustomerImages(){
     let formData = new FormData($('#imagesCus')[0]);
 
     $.ajax({
-        url : mainLink + 'customer?customerId=' + "C001",
+        url : mainLink + 'customer?customerId=' + $('#txtCusID').text(),
         method : "post",
         sync:true,
         data : formData,
@@ -93,7 +94,6 @@ function saveCustomerImages(){
 
 
 function generateCustomerID() {
-    $("#txtCusID").text("C00-001");
     $.ajax({
         url: "http://localhost:8080/Back_End_war/customer/IdGenerate",
         method: "GET",
@@ -102,18 +102,28 @@ function generateCustomerID() {
         success: function (resp) {
             let id = resp.value;
             console.log("id" + id);
-            let tempId = parseInt(id.split("-")[1]);
-            tempId = tempId + 1;
-            if (tempId <= 9) {
-                $("#txtCusID").text("C00-00" + tempId);
-            } else if (tempId <= 99) {
-                $("#txtCusID").text("C00-0" + tempId);
-            } else {
-                $("#txtCusID").text("C00-" + tempId);
+
+            if(id === null){
+                id = "C00-001"
+                console.log(id)
+            }else{
+                let tempId = parseInt(id.split("-")[1]);
+                tempId = tempId + 1;
+                if (tempId <= 9) {
+                    $("#txtCusID").text("C00-00" + tempId);
+                } else if (tempId <= 99) {
+                    $("#txtCusID").text("C00-0" + tempId);
+                } else {
+                    $("#txtCusID").text("C00-" + tempId);
+                }
             }
+
+            $('#txtCusID').text(id);
+
+
         },
         error: function (ob, statusText, error) {
-            resp.message();
+
         }
     });
 }

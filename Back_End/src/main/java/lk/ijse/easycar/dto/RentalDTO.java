@@ -20,6 +20,7 @@ public class RentalDTO {
     private String pickupTime;
     private String status;
     private String declineReason;
+    private String fullPaymentStatus;
     private List<RentDetailDTO> rentDetails;
 
 }

@@ -21,11 +21,12 @@ $.ajax({
             let mil = cars[i].currentMileage;
             let transmissionType = cars[i].transmissionType;
             let price = cars[i].freeMileageDailyPrice;
+            let frontImg = cars[i].frontImage;
 
             let car = `
             <div class="col-3" style="height: 64vh; box-shadow: 0px 1px 10px #C2C3C2; border-radius: 5px">
 
-                    <img class="mt-2" src="../assest/images/customerrentpage/Car.jpeg" width="100%" style="border-radius: 5px">
+                    <img class="mt-2" src="../..${frontImg}" width="100%" style="border-radius: 5px">
 
                     <h1 class="mt-3" style="font-family: 'Fira Sans', sans-serif; font-weight: 500; font-size: 20px">${brand}</h1>
 
@@ -174,7 +175,6 @@ $('#btnPlaceOrder').click(function () {
             method : "post",
             success:function(){
                 console.log("Success")
-                saveCustomerImages();
             },
             error : function(){
                 console.log("Error")
@@ -211,24 +211,25 @@ $('#btnPlaceOrder').click(function () {
         pickupTime:pickupTime,
         status:"PENDING",
         declineReason:"NOT YET",
+        fullPaymentStatus:"NOT YET",
         rentDetails:rentDetails
     }
 
     count = 0;
 
-    // $.ajax({
-    //     url : mainLink + 'customerrent',
-    //     method : "post",
-    //     data : JSON.stringify(rental),
-    //     contentType : 'application/json',
-    //     success:function(){
-    //         console.log("Success");
-    //         $('#tblCart').empty();
-    //     },
-    //     error : function(){
-    //         console.log("Error")
-    //     }
-    // });
+    $.ajax({
+        url : mainLink + 'customerrent',
+        method : "post",
+        data : JSON.stringify(rental),
+        contentType : 'application/json',
+        success:function(){
+            console.log("Success");
+            $('#tblCart').empty();
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
 
 
 
