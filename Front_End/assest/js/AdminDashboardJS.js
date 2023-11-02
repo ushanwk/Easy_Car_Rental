@@ -98,7 +98,7 @@ $('#btnBooking').click(function () {
     $('#dashboardPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').show();
-    loadAllCars();
+    loadAllRents();
 });
 
 $('#btnDriverReg').click(function () {
@@ -392,8 +392,6 @@ function loadAllCars(){
             let cars = $(res.data);
             $('#tblAllCar').empty();
 
-            console.log(cars)
-
             for(let i = 0; i < cars.length; i++){
                 let carId = cars[i].carID;
                 let brand = cars[i].brand;
@@ -413,6 +411,54 @@ function loadAllCars(){
     });
 }
 
+
+
+
+
+
+function loadAllRents(){
+
+    let customers;
+
+    $.ajax({
+        url : mainLink + "customer",
+        success : function (res){
+            customers = $(res.data);
+        }
+    });
+
+
+    $.ajax({
+        url : mainLink + "rent",
+        success : function(res){
+
+            let rents = $(res.data);
+
+            for(let i = 0; i < rents.length; i++){
+
+                let rentId = rents[i].rentID;
+                let cusId = rents[i].customerID;
+                let pickupDate = rents[i].pickupDate;
+                let pickupTime = rents[i].pickupTime;
+                let status = rents[i].status;
+                let cusName = "name"
+
+                for(let k = 0; k < customers.length; k++){
+                    if(customers[k].customerID == cusId){
+                        cusName = customers[k].name;
+                    }
+                }
+
+                let row =`<tr><td>${rentId}</td><td>${cusName}</td><td>${pickupDate}</td><td>${pickupTime}</td><td>${status}</td></tr>`;
+                $('#tblAllBooking').append(row);
+
+
+            }
+            
+        }
+    });
+
+}
 
 
 
