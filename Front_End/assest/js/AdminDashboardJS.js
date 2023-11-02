@@ -41,6 +41,7 @@ $('#customerPanel').hide();
 $('#driverPanel').hide();
 $('#carPanel').hide();
 $('#allCarPanel').hide();
+$('#allBookingPanel').hide();
 
 $('#btnDashboard').click(function () {
     $('#dashboardPanel').show();
@@ -48,6 +49,7 @@ $('#btnDashboard').click(function () {
     $('#driverPanel').hide();
     $('#carPanel').hide();
     $('#allCarPanel').hide();
+    $('#allBookingPanel').hide();
 });
 
 $('#btnCustomer').click(function () {
@@ -56,6 +58,7 @@ $('#btnCustomer').click(function () {
     $('#driverPanel').hide();
     $('#carPanel').hide();
     $('#allCarPanel').hide();
+    $('#allBookingPanel').hide();
     loadAllCustomers();
 });
 
@@ -65,6 +68,7 @@ $('#btnDriver').click(function () {
     $('#dashboardPanel').hide();
     $('#carPanel').hide();
     $('#allCarPanel').hide();
+    $('#allBookingPanel').hide();
     loadAllDrivers();
 });
 
@@ -74,6 +78,7 @@ $('#btnCar').click(function () {
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
     $('#allCarPanel').hide();
+    $('#allBookingPanel').hide();
 });
 
 $('#btnCarAll').click(function () {
@@ -82,10 +87,19 @@ $('#btnCarAll').click(function () {
     $('#customerPanel').hide();
     $('#dashboardPanel').hide();
     $('#allCarPanel').show();
+    $('#allBookingPanel').hide();
     loadAllCars();
 });
 
-
+$('#btnBooking').click(function () {
+    $('#carPanel').hide();
+    $('#driverPanel').hide();
+    $('#customerPanel').hide();
+    $('#dashboardPanel').hide();
+    $('#allCarPanel').hide();
+    $('#allBookingPanel').show();
+    loadAllCars();
+});
 
 $('#btnDriverReg').click(function () {
     addDriver();

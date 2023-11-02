@@ -20,6 +20,9 @@ public class Rental {
 
     private String status;
 
+    private String pickupDate;
+    private String pickupTime;
+
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
     private Customer customerID;
