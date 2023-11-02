@@ -431,7 +431,7 @@ function loadAllRents(){
     $.ajax({
         url : mainLink + "rent",
         success : function(res){
-
+            $('#tblAllBooking').empty();
             let rents = $(res.data);
 
             for(let i = 0; i < rents.length; i++){
@@ -452,9 +452,14 @@ function loadAllRents(){
                 let row =`<tr><td>${rentId}</td><td>${cusName}</td><td>${pickupDate}</td><td>${pickupTime}</td><td>${status}</td></tr>`;
                 $('#tblAllBooking').append(row);
 
+                $('#tblAllBooking>tr').click(function () {
+                    rentId = $(this).children().eq(0).text();
+                    console.log(id)
+                });
+
 
             }
-            
+
         }
     });
 
