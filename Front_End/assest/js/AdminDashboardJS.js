@@ -452,11 +452,14 @@ function loadAllRents(){
                 let row =`<tr><td>${rentId}</td><td>${cusName}</td><td>${pickupDate}</td><td>${pickupTime}</td><td>${status}</td></tr>`;
                 $('#tblAllBooking').append(row);
 
-                $('#tblAllBooking>tr').click(function () {
-                    rentId = $(this).children().eq(0).text();
-                    console.log(id)
-                });
 
+                $('#tblAllBooking>tr').click(function () {
+
+                    let clickedRentId = $(this).children().eq(0).text();
+
+                    
+
+                });
 
             }
 
