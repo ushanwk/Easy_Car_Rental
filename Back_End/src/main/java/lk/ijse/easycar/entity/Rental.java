@@ -18,6 +18,8 @@ public class Rental {
     private String rentID;
     private String fullPaymentStatus;
 
+    private String status;
+
     @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
     @JoinColumn(name = "customerID",referencedColumnName = "customerID",nullable = false)
     private Customer customerID;

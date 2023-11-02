@@ -37,7 +37,7 @@ $('#btnSignIn').click(function () {
                     let currentDate = new Date().toJSON().slice(0, 10);
 
                     const d = new Date();
-                    let hours = new Date().getTime();
+                    var hours = new Date().toLocaleTimeString();
 
                     let loginId = $('#txtLogID').text();
                     let us = $('#inputUsername').val();

@@ -102,7 +102,7 @@ $.ajax({
 
 
                     let row =`<tr><td class="visually-hidden">${carId}</td><td>${brand}</td><td>${fuel}</td><td>${wavier}</td><td>${price}</td>
-                                            <td><input type="file" class="form-control" id="inputSlipImg"></td>  
+                                            <td><input type="file" class="form-control inputWavier" id="inputSlipImg"></td>  
                                          <td><input class="form-check-input form-check form-switch bg-warning" type="checkbox" id="flexSwitchCheckDefault"></td>
                                          <td><button type="button" class="btn btn-danger cartDeleteBtn">Remove</button></td>
                                         </tr>`;
@@ -137,6 +137,7 @@ $('#btnAddtoCart').click(function () {
 });
 
 $('#btnCancelOrder').click(function () {
+    addWavierPaymentsSlipImg();
     $('#cartTableSec').hide();
     $('#carBowsing').show()
     $('#tblCart').empty();
@@ -151,7 +152,7 @@ function bindCartBtn() {
 }
 
 
-
+let toUpdatePaymentId = [];
 
 $('#btnPlaceOrder').click(function () {
 
@@ -165,6 +166,7 @@ $('#btnPlaceOrder').click(function () {
     let rentDetails = [];
 
     var count = 1;
+
 
     $("#tblCart > tr").each(function () {
 
@@ -181,10 +183,13 @@ $('#btnPlaceOrder').click(function () {
             }
         });
 
-        let driverId = "Dr001"
+        let driverId = "D00-001"
+        let paymeneId = rentID + "-P" + count;
+
+        toUpdatePaymentId.push(paymeneId);
 
         let payment = {
-            paymentID : "P00-" + rentID + "-" + count,
+            paymentID : rentID + "-P" + count,
             waiverDeductions : 0,
             waiverSlip : null,
             extraMileagePayment : 0
@@ -231,10 +236,9 @@ $('#btnPlaceOrder').click(function () {
         }
     });
 
-
-
-
 });
+
+
 
 
 
