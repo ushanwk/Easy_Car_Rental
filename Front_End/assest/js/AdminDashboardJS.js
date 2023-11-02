@@ -117,9 +117,9 @@ function loadAllCustomers(){
                 let address = customers[i].address;
                 let email = customers[i].email;
                 let nic = customers[i].nicNo;
+                let nicImg = "../assest/projectimages/customerimages/frontimage/front_" + id + ".jpeg";
 
-                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic
-                }</td></tr>`;
+                let row =`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${email}</td><td>${nic}</td><td><img style="width: 30%" src="${nicImg}"></td></tr>`;
                 $('#tblCustomer').append(row);
             }
         }
@@ -211,12 +211,17 @@ function loadAllDrivers(){
                 let driverId = drivers[i].driverID;
                 let license = drivers[i].drivingLicenceNo;
                 let email = drivers[i].email;
+                let name = drivers[i].driverName;
 
-                let row =`<tr><td>${driverId}</td><td>${license}</td><td>${email}</td></tr>`;
+                let row =`<tr><td>${driverId}</td><td>${name}</td><td>${license}</td><td>${email}</td><td><button type="button" class="btn btn-danger driverDeleteBtn">Delete</button></td></tr>`;
                 $('#tblDriver').append(row);
+
             }
         }
     });
+
+
+
 }
 
 
