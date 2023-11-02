@@ -76,4 +76,10 @@ public class DriverServiceImpl implements DriverService {
         }.getType());
     }
 
+    @Override
+    public void deleteDriver(String driverId) {
+        Driver driver = driverRepo.findById(driverId).get();
+        driverRepo.delete(driver);
+    }
+
 }

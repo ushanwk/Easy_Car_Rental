@@ -14,4 +14,6 @@ public interface DriverService {
 
     List<DriverDTO> loadAllDriver();
 
+    void deleteDriver(String driverId);
+
 }

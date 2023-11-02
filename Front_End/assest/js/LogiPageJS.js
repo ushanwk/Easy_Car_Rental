@@ -73,14 +73,13 @@ $('#btnSignIn').click(function () {
                     });
 
 
-
-                    // if(users[rightUsername].role == "CUSTOMER"){
-                    //     window.open("../pages/LogedBrowsePage.html","_self");
-                    // }else if(users[rightUsername].role == "ADMIN"){
-                    //     window.open("../pages/AdminDashboardPage.html","_self");
-                    // } else {
-                    //     alert("Driver")
-                    // }
+                    if(users[rightUsername].role == "CUSTOMER"){
+                        window.open("../pages/LogedBrowsePage.html","_self");
+                    }else if(users[rightUsername].role == "ADMIN"){
+                        window.open("../pages/AdminDashboardPage.html","_self");
+                    } else {
+                        alert("Driver")
+                    }
 
                 }else {
                     alert("Invalid Username or Password !");

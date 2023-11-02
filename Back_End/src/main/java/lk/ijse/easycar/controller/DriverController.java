@@ -38,6 +38,12 @@ public class DriverController {
     public ResponseUtil getAllDriver(){
         return new ResponseUtil("Ok", "All Drivers", driverService.loadAllDriver());
     }
-    
+
+    @DeleteMapping(params = {"driverId"})
+    public ResponseUtil deleteDriver(String driverId){
+        driverService.deleteDriver(driverId);
+        return new ResponseUtil("Ok", "All Deleted", driverId);
+    }
+
 
 }

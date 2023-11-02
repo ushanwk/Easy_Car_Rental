@@ -216,12 +216,31 @@ function loadAllDrivers(){
                 let row =`<tr><td>${driverId}</td><td>${name}</td><td>${license}</td><td>${email}</td><td><button type="button" class="btn btn-danger driverDeleteBtn">Delete</button></td></tr>`;
                 $('#tblDriver').append(row);
 
+               deleteRow(driverId);
+
             }
         }
     });
+}
 
+function deleteRow(id) {
+    $('.driverDeleteBtn').off('click');
+    $('.driverDeleteBtn').click(function () {
+        $(this).closest('tr').remove();
 
+        $.ajax({
+            url : mainLink + 'driver?driverId=' + id,
+            method : "delete",
+            sync:true,
+            success:function(){
+                console.log("Deleted")
+            },
+            error : function(){
+                console.log("Error")
+            }
+        });
 
+    });
 }
 
 
