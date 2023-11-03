@@ -6,4 +6,6 @@ public interface PaymentService {
 
     void addPayment(PaymentDTO paymentDTO);
 
+    PaymentDTO getById(String id);
+
 }

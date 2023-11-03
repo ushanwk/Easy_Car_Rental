@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -24,5 +25,11 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public void addPayment(PaymentDTO paymentDTO) {
         paymentRepo.save(mapper.map(paymentDTO, Payment.class));
+    }
+
+    @Override
+    public PaymentDTO getById(String id) {
+        Payment byId = paymentRepo.findById(id).get();
+        return mapper.map(byId, PaymentDTO.class);
     }
 }

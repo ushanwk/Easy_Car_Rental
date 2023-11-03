@@ -516,7 +516,20 @@ function loadAllRents(){
                                         $('#paymentIdtxtPay').text('Pay ID - ' + paymId);
 
 
-
+                                        $.ajax({
+                                            url : mainLink + 'payment?payId=' + payId + "&amount=" + car.extraMileagePrice,
+                                            method : "post",
+                                            header:"Access-Control-Allow-Origin",
+                                            async : false,
+                                            processData: false,
+                                            contentType: false,
+                                            success:function(){
+                                                console.log("Go")
+                                            },
+                                            error : function(){
+                                                console.log("Error")
+                                            }
+                                        });
 
 
                                     },
