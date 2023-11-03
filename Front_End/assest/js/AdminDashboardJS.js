@@ -42,6 +42,7 @@ $('#driverPanel').hide();
 $('#carPanel').hide();
 $('#allCarPanel').hide();
 $('#allBookingPanel').hide();
+$('#paymentPanel').hide();
 
 $('#btnDashboard').click(function () {
     $('#dashboardPanel').show();
@@ -50,6 +51,7 @@ $('#btnDashboard').click(function () {
     $('#carPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').hide();
+    $('#paymentPanel').hide();
 });
 
 $('#btnCustomer').click(function () {
@@ -59,6 +61,7 @@ $('#btnCustomer').click(function () {
     $('#carPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').hide();
+    $('#paymentPanel').hide();
     loadAllCustomers();
 });
 
@@ -69,6 +72,7 @@ $('#btnDriver').click(function () {
     $('#carPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').hide();
+    $('#paymentPanel').hide();
     loadAllDrivers();
 });
 
@@ -79,6 +83,7 @@ $('#btnCar').click(function () {
     $('#dashboardPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').hide();
+    $('#paymentPanel').hide();
 });
 
 $('#btnCarAll').click(function () {
@@ -88,6 +93,7 @@ $('#btnCarAll').click(function () {
     $('#dashboardPanel').hide();
     $('#allCarPanel').show();
     $('#allBookingPanel').hide();
+    $('#paymentPanel').hide();
     loadAllCars();
 });
 
@@ -98,6 +104,19 @@ $('#btnBooking').click(function () {
     $('#dashboardPanel').hide();
     $('#allCarPanel').hide();
     $('#allBookingPanel').show();
+    $('#paymentPanel').hide();
+    loadAllRents();
+});
+
+
+$('#btnPayment').click(function () {
+    $('#carPanel').hide();
+    $('#driverPanel').hide();
+    $('#customerPanel').hide();
+    $('#dashboardPanel').hide();
+    $('#allCarPanel').hide();
+    $('#allBookingPanel').hide();
+    $('#paymentPanel').show();
     loadAllRents();
 });
 
