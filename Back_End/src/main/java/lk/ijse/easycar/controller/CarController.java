@@ -42,4 +42,10 @@ public class CarController {
     }
 
 
+    @GetMapping(params = {"carIdById"})
+    public ResponseUtil getCarByID(String carIdById){
+        return new ResponseUtil("Ok", "All Customers", carService.getByID(carIdById));
+    }
+
+
 }

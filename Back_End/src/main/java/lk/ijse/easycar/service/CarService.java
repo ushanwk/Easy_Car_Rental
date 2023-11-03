@@ -15,4 +15,6 @@ public interface CarService {
 
     List<CarDTO> loadAllCar();
 
+    CarDTO getByID(String id);
+
 }

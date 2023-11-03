@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -90,5 +91,11 @@ public class CarServiceImpl implements CarService {
         List<Car> cars = carRepo.findAll();
         return mapper.map(cars, new TypeToken<List<CarDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public CarDTO getByID(String id) {
+        Car byId = carRepo.findById(id).get();
+        return mapper.map(byId, CarDTO.class);
     }
 }

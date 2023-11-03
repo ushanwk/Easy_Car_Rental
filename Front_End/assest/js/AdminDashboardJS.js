@@ -491,8 +491,34 @@ function loadAllRents(){
                             let wavier = "Done";
                             let driver = rents[k].rentDetails[u].driverID
 
-                            let row =`<tr><td>${car}</td><td>${wavier}</td><td>${driver}</td></tr>`;
+                            let row =`<tr><td>${car}</td><td>${wavier}</td><td>${driver}</td><td><button type="button" class="btn btn-dark btnpay">Pay</button></td></tr>`;
                             $('#tblOneBook').append(row);
+
+
+                            $('.btnpay').off('click');
+                            $('.btnpay').click(function () {
+
+                                let carId = ($(this).closest('tr').children(1).eq(0).text());
+
+
+                                $.ajax({
+                                    url: `http://localhost:8080/Back_End_war/car?carIdById=` + carId,
+                                    method: "GET",
+                                    success: function (resp) {
+                                        let car = resp.data;
+
+                                        $('#milageforRenttxtPay').text('Milage for Rent - ' + car.freeMileageDaily + "Km");
+                                        $('#priceforRenttxtPay').text('Price for Rent - Rs. ' + car.freeMileageDailyPrice);
+                                        $('#extraKmtxtPay').text('Extra Km Price - Rs. ' + car.extraMileagePrice);
+
+
+                                    },
+                                    error: function (ob, statusText, error) {
+
+                                    }
+                                });
+
+                            });
 
                         }
 
@@ -542,8 +568,6 @@ $('#btnDeclineRent').click(function () {
     });
 
 });
-
-
 
 
 
