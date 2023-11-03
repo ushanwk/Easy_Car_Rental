@@ -3,6 +3,7 @@ let mainLink = "http://localhost:8080/Back_End_war/";
 
 generateLoginID();
 
+
 $('#btnSignIn').click(function () {
 
     $.ajax({
@@ -13,6 +14,9 @@ $('#btnSignIn').click(function () {
             let users = $(res.data);
 
             let username = $('#inputUsername').val();
+
+            localStorage.setItem("username", username);
+
             let password = $('#inputPassword').val();
 
             let rightUsername = -1;
@@ -94,7 +98,6 @@ $('#btnSignIn').click(function () {
 });
 
 
-
 function generateLoginID() {
     $.ajax({
         url: "http://localhost:8080/Back_End_war/logindetail/IdGenerate",
@@ -126,3 +129,4 @@ function generateLoginID() {
         }
     });
 }
+

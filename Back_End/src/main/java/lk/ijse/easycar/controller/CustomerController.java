@@ -49,4 +49,12 @@ public class CustomerController {
         return customerService.customerIdGenerate();
     }
 
+
+    @GetMapping(params = {"username"})
+    public ResponseUtil customerFindByUsername(String username) {
+        return new ResponseUtil("Ok", "Customer Search Done", customerService.getCusByUsername(username));
+    }
+
+
+
 }

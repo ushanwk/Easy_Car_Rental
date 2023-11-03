@@ -114,8 +114,6 @@ function generateCustomerID() {
                 }
             }
 
-            console.log($('#txtCusID').text())
-
         },
         error: function (ob, statusText, error) {
 

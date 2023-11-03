@@ -81,4 +81,12 @@ public class CustomerServiceImpl implements CustomerService {
         return new CustomerIdGenerateDTO(customerRepo.getLastIndex());
     }
 
+    @Override
+    public CustomerDTO getCusByUsername(String username) {
+        Customer customerByUsername = customerRepo.getCustomerByUsername(username);
+        CustomerDTO customerDTO = mapper.map(customerByUsername, CustomerDTO.class);
+
+        return customerDTO;
+    }
+
 }

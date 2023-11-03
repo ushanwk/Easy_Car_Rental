@@ -16,4 +16,6 @@ public interface CustomerService {
 
     public CustomerIdGenerateDTO customerIdGenerate();
 
+    CustomerDTO getCusByUsername(String username);
+
 }
