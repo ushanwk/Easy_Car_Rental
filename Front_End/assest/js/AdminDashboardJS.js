@@ -457,6 +457,30 @@ function loadAllRents(){
 
                     let clickedRentId = $(this).children().eq(0).text();
 
+                    console.log(rents)
+
+                    for(let u = 0; u < rents.length; u++){
+
+                        if(rents[u].rentID == clickedRentId){
+
+                            let rId = rents[u].rentID;
+
+                            console.log(rents[u].rentDetails.length);
+
+                            for(let l = 0; l < rents[u].rentDetails.length; l++){
+
+                                let carId = rents[u].rentDetails[l].carID;
+                                let driverId =  rents[u].rentDetails[l].driverID;
+
+                                let row =`<tr><td>${carId}</td><td>slip</td><td>${driverId}</td></tr>`;
+                                $('#tblOneBook').append(row);
+
+                            }
+
+                        }
+
+                    }
+
                 });
 
             }
