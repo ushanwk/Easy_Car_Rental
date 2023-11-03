@@ -137,7 +137,6 @@ $('#btnAddtoCart').click(function () {
 });
 
 $('#btnCancelOrder').click(function () {
-    addWavierPaymentsSlipImg();
     $('#cartTableSec').hide();
     $('#carBowsing').show()
     $('#tblCart').empty();

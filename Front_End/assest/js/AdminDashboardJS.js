@@ -457,8 +457,6 @@ function loadAllRents(){
 
                     let clickedRentId = $(this).children().eq(0).text();
 
-                    
-
                 });
 
             }
