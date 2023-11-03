@@ -21,8 +21,6 @@ $('#btnSignIn').click(function () {
 
             let rightUsername = -1;
 
-            console.log(users)
-
             for(let i = 0; i < users.length; i++){
                 if(users[i].username == username){
                     rightUsername = i;

@@ -208,32 +208,54 @@ $('#btnPlaceOrder').click(function () {
     });
 
 
-    let rental = {
-        rentID:rentID,
-        customerID:"C00-001",
-        pickupDate:pickupDate,
-        pickupTime:pickupTime,
-        status:"PENDING",
-        declineReason:"NOT YET",
-        fullPaymentStatus:"NOT YET",
-        rentDetails:rentDetails
-    }
 
-    count = 0;
+
+
+    var username = localStorage.getItem("username");
+
 
     $.ajax({
-        url : mainLink + 'customerrent',
-        method : "post",
-        data : JSON.stringify(rental),
-        contentType : 'application/json',
-        success:function(){
-            console.log("Success");
-            $('#tblCart').empty();
-        },
-        error : function(){
-            console.log("Error")
+        url: `http://localhost:8080/Back_End_war/customer?username=${username}`,
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let customer = resp.data;
+            let cusId = customer.customerID;
+
+
+            let rental = {
+                rentID:rentID,
+                customerID:cusId,
+                pickupDate:pickupDate,
+                pickupTime:pickupTime,
+                status:"PENDING",
+                declineReason:"NOT YET",
+                fullPaymentStatus:"NOT YET",
+                rentDetails:rentDetails
+            }
+
+            count = 0;
+
+            $.ajax({
+                url : mainLink + 'customerrent',
+                method : "post",
+                data : JSON.stringify(rental),
+                contentType : 'application/json',
+                success:function(){
+                    console.log("Success");
+                    $('#tblCart').empty();
+                },
+                error : function(){
+                    console.log("Error")
+                }
+            });
+
+
+
         }
     });
+
 
 });
 
