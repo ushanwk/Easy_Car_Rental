@@ -515,6 +515,18 @@ function loadAllRents(){
                                         $('#extraKmtxtPay').text('Extra Km Price - Rs. ' + car.extraMileagePrice);
                                         $('#paymentIdtxtPay').text('Pay ID - ' + paymId);
 
+                                        $('#inputExtraKmPay').keydown(function (event){
+
+                                            if (event.key==='Enter'){
+                                                let extraTotal = Number($('#extraKmtxtPay').val())*Number($('#inputExtraKmPay').val());
+                                                let total =Number(extraTotal)+Number($('#priceforRenttxtPay').val());
+
+                                                $('#totaltxtPay').text(total);
+                                                //purchaseOrder();
+                                            }
+
+                                        });
+
 
                                         $.ajax({
                                             url : mainLink + 'payment?payId=' + payId + "&amount=" + car.extraMileagePrice,
