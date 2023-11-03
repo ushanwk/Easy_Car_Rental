@@ -489,9 +489,11 @@ function loadAllRents(){
 
                             let car = rents[k].rentDetails[u].carID;
                             let wavier = "Done";
-                            let driver = rents[k].rentDetails[u].driverID
+                            let driver = rents[k].rentDetails[u].driverID;
+                            let payId = rents[k].rentDetails[u].payment.paymentID;
 
-                            let row =`<tr><td>${car}</td><td>${wavier}</td><td>${driver}</td><td><button type="button" class="btn btn-dark btnpay">Pay</button></td></tr>`;
+
+                            let row =`<tr><td>${car}</td><td>${wavier}</td><td>${driver}</td><td>${payId}</td><td><button type="button" class="btn btn-dark btnpay">Pay</button></td></tr>`;
                             $('#tblOneBook').append(row);
 
 
@@ -499,6 +501,7 @@ function loadAllRents(){
                             $('.btnpay').click(function () {
 
                                 let carId = ($(this).closest('tr').children(1).eq(0).text());
+                                let paymId = ($(this).closest('tr').children(1).eq(3).text());
 
 
                                 $.ajax({
@@ -510,6 +513,8 @@ function loadAllRents(){
                                         $('#milageforRenttxtPay').text('Milage for Rent - ' + car.freeMileageDaily + "Km");
                                         $('#priceforRenttxtPay').text('Price for Rent - Rs. ' + car.freeMileageDailyPrice);
                                         $('#extraKmtxtPay').text('Extra Km Price - Rs. ' + car.extraMileagePrice);
+                                        $('#paymentIdtxtPay').text('Pay ID - ' + paymId);
+
 
 
                                     },
