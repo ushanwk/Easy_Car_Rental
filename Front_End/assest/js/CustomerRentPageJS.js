@@ -77,7 +77,7 @@ $.ajax({
                 </div>
             `
 
-            if(avl == "Available"){
+            if(avl == "AVAILABLE"){
                 $('#cars').append(car);
             }
 

@@ -90,6 +90,8 @@ function saveCustomerImages(){
 
 
 function generateCustomerID() {
+    $("#txtCusID").val("C00-001");
+
     $.ajax({
         url: "http://localhost:8080/Back_End_war/customer/IdGenerate",
         method: "GET",
@@ -97,11 +99,9 @@ function generateCustomerID() {
         dataType: "json",
         success: function (resp) {
             let id = resp.value;
-            console.log("id" + id);
 
             if(id === null){
-                id = "C00-001"
-                console.log(id)
+
             }else{
                 let tempId = parseInt(id.split("-")[1]);
                 tempId = tempId + 1;
@@ -114,8 +114,7 @@ function generateCustomerID() {
                 }
             }
 
-            $('#txtCusID').text(id);
-
+            console.log($('#txtCusID').text())
 
         },
         error: function (ob, statusText, error) {

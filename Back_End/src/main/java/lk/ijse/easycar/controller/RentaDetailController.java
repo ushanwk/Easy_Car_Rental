@@ -23,4 +23,11 @@ public class RentaDetailController {
         return new ResponseUtil("Ok", "Status Updated", rentId);
     }
 
+
+    @PostMapping(params = {"rentIdDec"})
+    public ResponseUtil declineOrder(String rentIdDec){
+        rentalService.updateDeclineStatus(rentIdDec);
+        return new ResponseUtil("Ok", "Status Updated", rentIdDec);
+    }
+
 }

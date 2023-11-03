@@ -13,4 +13,6 @@ public interface RentalService {
 
     void updateStatus(String rentID);
 
+    void updateDeclineStatus(String rentID);
+
 }

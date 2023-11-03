@@ -302,7 +302,7 @@ function addCar(){
     let transmissionType = carGear;
     let carID = $('#inputCarId').val();
     let backImage = $('#inputCarBackView').val();
-    let availability = "Available";
+    let availability = "AVAILABLE";
     let brand = $('#inputCarBrand').val();
     let color = $('#inputCarColor').val();
     let currentMilage = $('#inputCarMilage').val();
@@ -498,6 +498,23 @@ $('#btnAcceptRent').click(function () {
         sync:true,
         success:function(){
             console.log("Status update succesfully");
+            loadAllRents()
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
+
+});
+
+$('#btnDeclineRent').click(function () {
+
+    $.ajax({
+        url : mainLink + '/rentdetail?rentIdDec=' + $('#rentIdtoHide').text(),
+        method : "post",
+        sync:true,
+        success:function(){
+            console.log("Status Decline succesfully");
             loadAllRents()
         },
         error : function(){

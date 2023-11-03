@@ -2,6 +2,7 @@ package lk.ijse.easycar.service.impl;
 
 import lk.ijse.easycar.dto.CustomerDTO;
 import lk.ijse.easycar.dto.RentalDTO;
+import lk.ijse.easycar.entity.Car;
 import lk.ijse.easycar.entity.Customer;
 import lk.ijse.easycar.entity.Rental;
 import lk.ijse.easycar.repo.CarRepo;
@@ -24,6 +25,8 @@ public class RentalServiceImpl implements RentalService {
     RentalRepo rentalRepo;
     @Autowired
     ModelMapper mapper;
+    @Autowired
+    CarRepo carRepo;
 
     @Override
     public void addRental(RentalDTO rentalDTO) {
@@ -44,6 +47,22 @@ public class RentalServiceImpl implements RentalService {
         Rental rent = rentalRepo.findById(rentID).get();
         rent.setStatus("ACCEPTED");
         addRental(mapper.map(rent, RentalDTO.class));
+    }
+
+    @Override
+    public void updateDeclineStatus(String rentID) {
+        Rental rent = rentalRepo.findById(rentID).get();
+        rent.setStatus("DECLINED");
+        addRental(mapper.map(rent, RentalDTO.class));
+
+        for(int i = 0; i < rent.getRentDetails().size(); i++){
+
+            Car car = rent.getRentDetails().get(i).getCar();
+            car.setAvailability("AVAILABLE");
+
+            carRepo.save(car);
+
+        }
     }
 
 }

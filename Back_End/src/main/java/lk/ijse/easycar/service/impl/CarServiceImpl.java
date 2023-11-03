@@ -35,7 +35,7 @@ public class CarServiceImpl implements CarService {
     @Override
     public void addCar(String avlCarId) {
         Car car = carRepo.findById(avlCarId).get();
-        car.setAvailability("UnAvailable");
+        car.setAvailability("UNAVAILABLE");
         carRepo.save(car);
     }
 
