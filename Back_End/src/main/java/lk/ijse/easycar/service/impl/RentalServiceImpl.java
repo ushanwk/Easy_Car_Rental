@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -37,4 +38,12 @@ public class RentalServiceImpl implements RentalService {
         return mapper.map(rents, new TypeToken<List<RentalDTO>>() {
         }.getType());
     }
+
+    @Override
+    public void updateStatus(String rentID) {
+        Rental rent = rentalRepo.findById(rentID).get();
+        rent.setStatus("ACCEPTED");
+        addRental(mapper.map(rent, RentalDTO.class));
+    }
+
 }

@@ -11,4 +11,6 @@ public interface RentalService {
 
     List<RentalDTO> loadAllRents();
 
+    void updateStatus(String rentID);
+
 }

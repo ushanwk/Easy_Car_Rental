@@ -452,43 +452,60 @@ function loadAllRents(){
                 let row =`<tr><td>${rentId}</td><td>${cusName}</td><td>${pickupDate}</td><td>${pickupTime}</td><td>${status}</td></tr>`;
                 $('#tblAllBooking').append(row);
 
+            }
 
-                $('#tblAllBooking>tr').click(function () {
+            $('#tblAllBooking>tr').click(function () {
 
-                    let clickedRentId = $(this).children().eq(0).text();
+                $('#tblOneBook').empty();
 
-                    console.log(rents)
+                let clickedRentId = $(this).children().eq(0).text();
 
-                    for(let u = 0; u < rents.length; u++){
+                $('#rentIdtoHide').text(clickedRentId);
 
-                        if(rents[u].rentID == clickedRentId){
+                for(let k = 0; k < rents.length; k++){
 
-                            let rId = rents[u].rentID;
+                    if(rents[k].rentID == clickedRentId){
 
-                            console.log(rents[u].rentDetails.length);
+                        for(let u = 0; u < rents[k].rentDetails.length; u++){
 
-                            for(let l = 0; l < rents[u].rentDetails.length; l++){
+                            let car = rents[k].rentDetails[u].carID;
+                            let wavier = "Done";
+                            let driver = rents[k].rentDetails[u].driverID
 
-                                let carId = rents[u].rentDetails[l].carID;
-                                let driverId =  rents[u].rentDetails[l].driverID;
-
-                                let row =`<tr><td>${carId}</td><td>slip</td><td>${driverId}</td></tr>`;
-                                $('#tblOneBook').append(row);
-
-                            }
+                            let row =`<tr><td>${car}</td><td>${wavier}</td><td>${driver}</td></tr>`;
+                            $('#tblOneBook').append(row);
 
                         }
 
+                        break;
                     }
 
-                });
+                }
 
-            }
+            });
 
         }
     });
 
 }
+
+
+$('#btnAcceptRent').click(function () {
+
+    $.ajax({
+        url : mainLink + '/rentdetail?rentId=' + $('#rentIdtoHide').text(),
+        method : "post",
+        sync:true,
+        success:function(){
+            console.log("Status update succesfully");
+            loadAllRents()
+        },
+        error : function(){
+            console.log("Error")
+        }
+    });
+
+});
 
 
 
