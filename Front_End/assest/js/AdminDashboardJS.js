@@ -199,6 +199,7 @@ function addDriver(){
             console.log("Success");
             addDriverimage();
             loadAllDrivers();
+            alert("Driver Added Succesfully")
         },
         error : function(){
             console.log("Error");
@@ -368,6 +369,7 @@ function addCar(){
         success:function(){
             console.log("Success");
             saveCarImages();
+            alert("Car Added Succesfully")
         },
         error : function(){
             console.log("Error");

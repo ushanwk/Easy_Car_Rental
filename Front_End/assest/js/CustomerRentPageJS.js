@@ -247,6 +247,7 @@ $('#btnPlaceOrder').click(function () {
                 success:function(){
                     console.log("Success");
                     $('#tblCart').empty();
+                    alert("Renter Placed Successfully. Admin will give a Confirmation")
                 },
                 error : function(){
                     console.log("Error")
