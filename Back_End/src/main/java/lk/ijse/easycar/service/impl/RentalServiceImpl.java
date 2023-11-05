@@ -2,10 +2,12 @@ package lk.ijse.easycar.service.impl;
 
 import lk.ijse.easycar.dto.CustomerDTO;
 import lk.ijse.easycar.dto.RentalDTO;
+import lk.ijse.easycar.dto.RentalIdGenrateDTO;
 import lk.ijse.easycar.entity.Car;
 import lk.ijse.easycar.entity.Customer;
 import lk.ijse.easycar.entity.Rental;
 import lk.ijse.easycar.repo.CarRepo;
+import lk.ijse.easycar.repo.RentRepo;
 import lk.ijse.easycar.repo.RentalRepo;
 import lk.ijse.easycar.service.RentalService;
 import org.modelmapper.ModelMapper;
@@ -23,6 +25,8 @@ public class RentalServiceImpl implements RentalService {
 
     @Autowired
     RentalRepo rentalRepo;
+    @Autowired
+    RentRepo rentRepo;
     @Autowired
     ModelMapper mapper;
     @Autowired
@@ -64,5 +68,11 @@ public class RentalServiceImpl implements RentalService {
 
         }
     }
+
+    @Override
+    public RentalIdGenrateDTO rentIdGenerate() {
+        return new RentalIdGenrateDTO(rentRepo.getLastIndex());
+    }
+
 
 }

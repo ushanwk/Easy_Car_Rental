@@ -117,6 +117,7 @@ $('#btnPayment').click(function () {
     $('#allCarPanel').hide();
     $('#allBookingPanel').hide();
     $('#paymentPanel').show();
+    loadAllPayments()
     loadAllRents();
 });
 
@@ -600,6 +601,31 @@ $('#btnDeclineRent').click(function () {
     });
 
 });
+
+
+function loadAllPayments(){
+
+    $.ajax({
+        url : mainLink + "rent",
+        success : function(res){
+            $('#tblPayment').empty();
+            let rents = $(res.data);
+
+            for(let i = 0; i < rents.length; i++){
+
+                let rentId = rents[i].rentID;
+                let cusId = rents[i].customerID;
+                let pickupDate = rents[i].pickupDate;
+                let pickupTime = rents[i].pickupTime;
+                let status = rents[i].status;
+                let cusName = "name"
+
+                let row =`<tr><td>${rentId}</td><td>${cusName}</td><td>${pickupDate}</td><td>${pickupTime}</td><td>${status}</td></tr>`;
+                $('#tblPayment').append(row);
+
+            }}});
+
+}
 
 
 

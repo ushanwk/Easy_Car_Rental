@@ -1,7 +1,6 @@
 let mainLink = "http://localhost:8080/Back_End_war/";
 
 
-
 $.ajax({
     url : mainLink + "car",
     success : function(res){
@@ -134,6 +133,7 @@ $('#cartTableSec').hide();
 $('#btnAddtoCart').click(function () {
     $('#cartTableSec').show();
     $('#carBowsing').hide()
+    generateRentID();
 });
 
 $('#btnCancelOrder').click(function () {
@@ -155,7 +155,8 @@ let toUpdatePaymentId = [];
 
 $('#btnPlaceOrder').click(function () {
 
-    let rentID = $('#inputRentId').val();
+
+    let rentID = $('#txtCusID').text();
     let customerID = "C00-001";
     let pickupDate = $('#inputPickUpdate').val();
     let pickupTime = $('#inputPickUpTime').val();
@@ -193,6 +194,7 @@ $('#btnPlaceOrder').click(function () {
             waiverSlip : null,
             extraMileagePayment : 0
         }
+
 
         let rentDetail = {
             rentID:rentID,
@@ -258,6 +260,42 @@ $('#btnPlaceOrder').click(function () {
 
 
 });
+
+
+
+
+function generateRentID() {
+
+    $("#txtCusID").text("R00-001");
+
+    $.ajax({
+        url: "http://localhost:8080/Back_End_war/customerrent/IdGenerate",
+        method: "GET",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (resp) {
+            let id = resp.value;
+
+            if(id === null){
+
+            }else{
+                let tempId = parseInt(id.split("-")[1]);
+                tempId = tempId + 1;
+                if (tempId <= 9) {
+                    $("#txtCusID").text("R00-00" + tempId);
+                } else if (tempId <= 99) {
+                    $("#txtCusID").text("R00-0" + tempId);
+                } else {
+                    $("#txtCusID").text("R00-" + tempId);
+                }
+            }
+
+        },
+        error: function (ob, statusText, error) {
+        }
+    });
+
+}
 
 
 

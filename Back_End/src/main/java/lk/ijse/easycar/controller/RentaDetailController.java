@@ -1,7 +1,9 @@
 package lk.ijse.easycar.controller;
 
+import lk.ijse.easycar.dto.CustomerIdGenerateDTO;
 import lk.ijse.easycar.dto.CustomerImageDTO;
 import lk.ijse.easycar.dto.RentalDTO;
+import lk.ijse.easycar.dto.RentalIdGenrateDTO;
 import lk.ijse.easycar.service.RentalService;
 import lk.ijse.easycar.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +31,6 @@ public class RentaDetailController {
         rentalService.updateDeclineStatus(rentIdDec);
         return new ResponseUtil("Ok", "Status Updated", rentIdDec);
     }
+
 
 }

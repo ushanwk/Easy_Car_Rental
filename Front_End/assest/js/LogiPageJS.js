@@ -80,7 +80,7 @@ $('#btnSignIn').click(function () {
                     }else if(users[rightUsername].role == "ADMIN"){
                         window.open("../pages/AdminDashboardPage.html","_self");
                     } else {
-                        alert("Driver")
+                        window.open("../pages/driver.html","_self");
                     }
 
                 }else {

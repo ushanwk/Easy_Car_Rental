@@ -90,7 +90,7 @@ function saveCustomerImages(){
 
 
 function generateCustomerID() {
-    $("#txtCusID").val("C00-001");
+    $("#txtCusID").text("C00-001");
 
     $.ajax({
         url: "http://localhost:8080/Back_End_war/customer/IdGenerate",
